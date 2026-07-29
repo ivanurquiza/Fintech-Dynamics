@@ -14,6 +14,8 @@ import io
 import os
 import re
 import sys
+import shutil
+import tempfile
 import requests
 import py7zr
 
@@ -65,14 +67,17 @@ for year in range(y0, y1 + 1):
                     rename[hits[0]] = outname
                 elif outname != "balhist.txt":
                     sin_publicar.setdefault(per, []).append(outname)
-            data = z.read(targets=targets)
-            for member, bio in data.items():
-                outname = rename[member]
-                # balhist va a raw/, no a la carpeta del mes (siempre el mas nuevo)
-                out = os.path.join(HERE, "raw", "balhist.txt") if outname == "balhist.txt" \
-                      else os.path.join(dest, outname)
-                with open(out, "wb") as f:
-                    f.write(bio.read())
+            with tempfile.TemporaryDirectory() as tmp:
+                z.extract(path=tmp, targets=targets)
+                for member in targets:
+                    outname = rename[member]
+                    srcf = os.path.join(tmp, member.replace("\\", "/"))
+                    if not os.path.exists(srcf):
+                        continue
+                    # balhist va a raw/, no a la carpeta del mes (siempre el mas nuevo)
+                    out = os.path.join(HERE, "raw", "balhist.txt") if outname == "balhist.txt" \
+                          else os.path.join(dest, outname)
+                    shutil.move(srcf, out)
             ok += 1
             faltan = sin_publicar.get(per, [])
             print(f"{per}: OK ({len(r.content)/1e6:.0f} MB bajados)" +
