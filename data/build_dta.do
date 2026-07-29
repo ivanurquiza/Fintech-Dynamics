@@ -1,10 +1,10 @@
 * build_dta.do
 * Builds the processed .dta files from the raw BCRA sources.
-* Inputs:  data/Inclusion_financiera_BCRA/   (province-level series)
-*          data/raw/ief/YYYYMM/              (monthly IEF files, one folder per month;
-*                                             see descargar_ief_selectivo.py)
-* Output:  data/processed/
-* Run from the repo root: do data/build_dta.do
+* Inputs:  Inclusion_financiera_BCRA/   (province-level txt, utf-8)
+*          raw/ief/YYYYMM/              (monthly IEF files, latin-1; see
+*                                        descargar_ief_selectivo.py)
+* Output:  processed/
+* Run with the working directory in data/.
 * Some months lack the provincial xlsx or inf_adi/indicad because the BCRA
 * did not publish them; those months are skipped where relevant.
 
@@ -12,23 +12,39 @@ version 17
 clear all
 set more off
 
-* repo root; adjust the path if your copy lives somewhere else
-cap cd "~/Documents/GitHub/Fintech-Dynamics"
-
-global inc "data/Inclusion_financiera_BCRA"
-global ief "data/raw/ief"
-global out "data/processed"
+* paths are relative to data/, where this file lives
+global inc "Inclusion_financiera_BCRA"
+global ief "raw/ief"
+global out "processed"
 cap mkdir "$out"
 
-* standardize province names across sources (case, accents, CABA synonyms)
+* ------------------------------------------------------------------
+* helpers
+* ------------------------------------------------------------------
+
+* Standardize province names. The sources disagree on spelling: accents on
+* and off, "CABA" vs "CIUDAD DE BUENOS AIRES - CAPITAL FEDERAL" (with three
+* different spacings in the xlsx), "TIERRA DE FUEGO" (sic) in the old
+* suc_pcia files, and the long official Tierra del Fuego name in the PDA txt.
+* The xlsx also splits Buenos Aires into "GRAN BUENOS AIRES" and "RESTO DE
+* LA PROVINCIA DE BUENOS AIRES"; both are mapped to BUENOS AIRES and summed
+* later, to keep one row per province.
 cap program drop fix_prov
 program define fix_prov
     args v
     replace `v' = ustrto(ustrnormalize(ustrupper(ustrtrim(`v')), "nfd"), "ascii", 2)
-    replace `v' = "CABA" if inlist(`v', "CAPITAL FEDERAL", ///
-        "CIUDAD AUTONOMA DE BUENOS AIRES", "CIUDAD DE BUENOS AIRES")
     drop if `v' == "TOTAL" | `v' == ""
+    replace `v' = "CABA" if strpos(`v', "CAPITAL") | strpos(`v', "CIUDAD")
+    replace `v' = "TIERRA DEL FUEGO" if strpos(`v', "TIERRA D")
+    replace `v' = "BUENOS AIRES" if strpos(`v', "GRAN BUENOS") | strpos(`v', "RESTO DE LA PROV")
     rename `v' provincia
+end
+
+* Stop if a province name survived outside the canonical list of 24
+cap program drop chk_prov
+program define chk_prov
+    qui levelsof provincia, local(provs)
+    assert `: word count `provs'' == 24
 end
 
 * ------------------------------------------------------------------
@@ -37,38 +53,38 @@ end
 
 * share of adults with credit, all lenders
 import delimited "$inc/BCRA_deudores_SFA_total_por_provincia.txt", ///
-    varnames(1) encoding("latin1") bindquote(strict) stringcols(_all) clear
+    varnames(1) bindquote(strict) stringcols(_all) clear
 fix_prov tx_provincia
 gen ym = ym(real(substr(cd_periodo,1,4)), real(substr(cd_periodo,5,2)))
-gen pct_deud = real(subinstr(nu_valor, ",", ".", .))
-keep provincia ym pct_deud
+gen pct_adultos_credito = real(subinstr(nu_valor, ",", ".", .))
+keep provincia ym pct_adultos_credito
 tempfile f1
 save `f1'
 
 * share of adults with credit, by lender group
 import delimited "$inc/BCRA_deudores_SFA_por_grupo_institucional_y_provincia.txt", ///
-    varnames(1) encoding("latin1") bindquote(strict) stringcols(_all) clear
+    varnames(1) bindquote(strict) stringcols(_all) clear
 fix_prov tx_provincia
 gen ym = ym(real(substr(cd_periodo,1,4)), real(substr(cd_periodo,5,2)))
 gen valor = real(subinstr(nu_valor, ",", ".", .))
 gen grupo = ""
-replace grupo = "opnfc" if strpos(tx_grupo, "OPNFC")
-replace grupo = "pnfc"  if strpos(tx_grupo, "PNFC") & grupo == ""
-replace grupo = "bpriv" if strpos(tx_grupo, "Privados")
-replace grupo = "bpub"  if strpos(tx_grupo, "Public Banks")
-replace grupo = "cf"    if strpos(tx_grupo, "Financial Companies")
-replace grupo = "eeff"  if strpos(tx_grupo, "EEFF")
-replace grupo = "tcnb"  if strpos(tx_grupo, "TCNB")
+replace grupo = "opnfc"       if strpos(tx_grupo, "OPNFC")
+replace grupo = "pnfc"        if strpos(tx_grupo, "PNFC") & grupo == ""
+replace grupo = "bcos_priv"   if strpos(tx_grupo, "Privados")
+replace grupo = "bcos_pub"    if strpos(tx_grupo, "Public Banks")
+replace grupo = "comp_fin"    if strpos(tx_grupo, "Financial Companies")
+replace grupo = "ent_fin"     if strpos(tx_grupo, "EEFF")
+replace grupo = "tarj_nobanc" if strpos(tx_grupo, "TCNB")
 drop if grupo == ""
 keep provincia ym grupo valor
 reshape wide valor, i(provincia ym) j(grupo) string
-rename valor* pct_deud_*
+rename valor* pct_adultos_cred_*
 tempfile f2
 save `f2'
 
 * share of adults with credit, by product
 import delimited "$inc/BCRA_deudores_SFA_por_tipo_asistencia_y_provincia.txt", ///
-    varnames(1) encoding("latin1") bindquote(strict) stringcols(_all) clear
+    varnames(1) bindquote(strict) stringcols(_all) clear
 fix_prov tx_provincia
 gen ym = ym(real(substr(cd_periodo,1,4)), real(substr(cd_periodo,5,2)))
 gen valor = real(subinstr(nu_valor, ",", ".", .))
@@ -81,31 +97,54 @@ replace prod = "tarjetas"     if strpos(tx_asistencia, "Credit")
 drop if prod == ""
 keep provincia ym prod valor
 reshape wide valor, i(provincia ym) j(prod) string
-rename valor* pct_deud_*
+rename valor* pct_adultos_cred_*
 tempfile f3
 save `f3'
 
 * access points by type
 import delimited "$inc/BCRA_puntos_acceso_por_tipo_y_provincia.txt", ///
-    varnames(1) encoding("latin1") bindquote(strict) stringcols(_all) clear
+    varnames(1) bindquote(strict) stringcols(_all) clear
 fix_prov tx_provincia
 gen ym = ym(real(substr(cd_periodo,1,4)), real(substr(cd_periodo,5,2)))
 gen valor = real(subinstr(nu_pda, ",", ".", .))
 gen tipo = ""
-replace tipo = "acsf"      if strpos(tx_tipopda, "ACSF")
-replace tipo = "atm"       if strpos(tx_tipopda, "ATM")
-replace tipo = "suc_movil" if strpos(tx_tipopda, "Mobile")
-replace tipo = "suc"       if strpos(tx_tipopda, "Sucursales")
-replace tipo = "tas"       if strpos(tx_tipopda, "TAS")
+replace tipo = "acsf"               if strpos(tx_tipopda, "ACSF")
+replace tipo = "atm"                if strpos(tx_tipopda, "ATM")
+replace tipo = "sucursales_moviles" if strpos(tx_tipopda, "Mobile")
+replace tipo = "sucursales"         if strpos(tx_tipopda, "Sucursales")
+replace tipo = "tas"                if strpos(tx_tipopda, "TAS")
 drop if tipo == ""
 keep provincia ym tipo valor
 reshape wide valor, i(provincia ym) j(tipo) string
-rename valor* pda_*
+rename valor* n_*
 
 merge 1:1 provincia ym using `f3', nogen
 merge 1:1 provincia ym using `f2', nogen
 merge 1:1 provincia ym using `f1', nogen
+chk_prov
 format ym %tm
+
+label var provincia "Provincia"
+label var ym "Mes"
+label var pct_adultos_credito "% de adultos con financiamiento en el sistema financiero ampliado"
+label var pct_adultos_cred_bcos_priv "% de adultos con financiamiento de bancos privados"
+label var pct_adultos_cred_bcos_pub "% de adultos con financiamiento de bancos publicos"
+label var pct_adultos_cred_comp_fin "% de adultos con financiamiento de companias financieras"
+label var pct_adultos_cred_ent_fin "% de adultos con financiamiento de entidades financieras (EEFF)"
+label var pct_adultos_cred_opnfc "% de adultos con financ. de otros proveedores no financieros (OPNFC)"
+label var pct_adultos_cred_pnfc "% de adultos con financ. de proveedores no financieros de credito (PNFC)"
+label var pct_adultos_cred_tarj_nobanc "% de adultos con financiamiento de tarjetas no bancarias (TCNB)"
+label var pct_adultos_cred_adelantos "% de adultos con adelantos"
+label var pct_adultos_cred_hipotecarios "% de adultos con credito hipotecario"
+label var pct_adultos_cred_personales "% de adultos con prestamos personales"
+label var pct_adultos_cred_prendarios "% de adultos con credito prendario"
+label var pct_adultos_cred_tarjetas "% de adultos con tarjeta de credito"
+label var n_sucursales "Sucursales (cantidad)"
+label var n_sucursales_moviles "Sucursales moviles (cantidad)"
+label var n_atm "Cajeros automaticos ATM (cantidad)"
+label var n_tas "Terminales de autoservicio (cantidad)"
+label var n_acsf "Agencias complementarias de servicios financieros (cantidad)"
+label data "Inclusion financiera BCRA, provincia x mes"
 sort provincia ym
 save "$out/inclusion_prov.dta", replace
 
@@ -114,23 +153,34 @@ save "$out/inclusion_prov.dta", replace
 * ------------------------------------------------------------------
 
 import delimited "$inc/BCRA_tenencia_cuentas_bancarias_y_de_pago_por_provincia.txt", ///
-    varnames(1) encoding("latin1") bindquote(strict) stringcols(_all) clear
+    varnames(1) bindquote(strict) stringcols(_all) clear
 fix_prov tx_provincia
 gen ym = ym(real(substr(cd_periodo,1,4)), real(substr(cd_periodo,5,2)))
 gen yq = qofd(dofm(ym))
 gen valor = real(subinstr(nu_valor, ",", ".", .))
 gen tipo = ""
-replace tipo = "ambas"           if strpos(tx_tipo_cuenta, "Bank and payment")
-replace tipo = "solo_bancaria"   if strpos(tx_tipo_cuenta, "Only bank")
-replace tipo = "solo_pago"       if strpos(tx_tipo_cuenta, "Only payment")
-replace tipo = "almenos_bancaria" if strpos(tx_tipo_cuenta, "one bank")
-replace tipo = "almenos_pago"    if strpos(tx_tipo_cuenta, "one payment")
-replace tipo = "almenos_una"     if strpos(tx_tipo_cuenta, "one account")
+replace tipo = "ambas_ctas"        if strpos(tx_tipo_cuenta, "Bank and payment")
+replace tipo = "solo_cta_bancaria" if strpos(tx_tipo_cuenta, "Only bank")
+replace tipo = "solo_cta_pago"     if strpos(tx_tipo_cuenta, "Only payment")
+replace tipo = "min1_cta_bancaria" if strpos(tx_tipo_cuenta, "one bank")
+replace tipo = "min1_cta_pago"     if strpos(tx_tipo_cuenta, "one payment")
+replace tipo = "min1_cta"          if strpos(tx_tipo_cuenta, "one account")
 drop if tipo == ""
 keep provincia yq tipo valor
 reshape wide valor, i(provincia yq) j(tipo) string
-rename valor* n_cuentas_*
+rename valor* n_pers_*
+chk_prov
 format yq %tq
+
+label var provincia "Provincia"
+label var yq "Trimestre"
+label var n_pers_solo_cta_bancaria "Personas con cuenta bancaria (CBU) solamente"
+label var n_pers_solo_cta_pago "Personas con cuenta de pago (CVU) solamente"
+label var n_pers_ambas_ctas "Personas con cuenta bancaria y de pago"
+label var n_pers_min1_cta_bancaria "Personas con al menos una cuenta bancaria"
+label var n_pers_min1_cta_pago "Personas con al menos una cuenta de pago"
+label var n_pers_min1_cta "Personas con al menos una cuenta"
+label data "Tenencia de cuentas bancarias y de pago BCRA, provincia x trimestre"
 sort provincia yq
 save "$out/tenencia_cuentas_prov.dta", replace
 
@@ -183,6 +233,25 @@ rename saldo311740 dep_pfijo
 rename saldo400000 pn
 rename saldo500000 resultados
 format ym %tm
+
+label var ent "Codigo de entidad BCRA"
+label var nombre "Nombre de la entidad"
+label var ym "Mes"
+label var activo "Activo total"
+label var efectivo "Efectivo y depositos en bancos"
+label var titulos "Titulos publicos y privados"
+label var prestamos "Prestamos (total)"
+label var prest_spnf "Prestamos al sector privado no financiero (pesos, capitales)"
+label var pasivo "Pasivo total"
+label var depositos "Depositos (total)"
+label var dep_spnf "Depositos del sector privado no financiero (pesos, capitales)"
+label var dep_ctacte "Depositos SPNF en cuenta corriente"
+label var dep_cajaahorro "Depositos SPNF en caja de ahorros"
+label var dep_ctasueldo "Depositos SPNF en cuenta sueldo y previsional"
+label var dep_pfijo "Depositos SPNF a plazo fijo"
+label var pn "Patrimonio neto"
+label var resultados "Resultados"
+label data "Balances mensuales por entidad, IEF BCRA (baldet)"
 sort ent ym
 save "$out/balances_bancos.dta", replace
 
@@ -190,7 +259,8 @@ save "$out/balances_bancos.dta", replace
 * 4. prestamos_depositos_prov.dta: bank x province x month
 * ------------------------------------------------------------------
 * Branches and ATMs come from suc_pcia (all months); loan and deposit
-* amounts come from the distribgeo xlsx (missing in a few months of 2020).
+* amounts come from the distribgeo xlsx (quarterly, missing in a few
+* months of 2020).
 
 tempfile suc
 local first = 1
@@ -245,13 +315,15 @@ foreach m of local dirs {
         drop if missing(B) | missing(D)
         fix_prov D
         gen ent = real(B)
-        * the xlsx holds the last closed quarter, which is not the folder month:
-        * date it with its own Fecha column (yyyymmdd)
+        * the xlsx holds the last closed quarter, which is not the folder
+        * month: date it with its own Fecha column (yyyymmdd)
         gen ym = ym(real(substr(A,1,4)), real(substr(A,5,2)))
         gen double prestamos_prov = real(E)
         gen double depositos_prov = real(F)
         keep ent provincia ym prestamos_prov depositos_prov
         drop if missing(ent) | missing(ym)
+        * add up GBA and the rest of Buenos Aires province
+        collapse (sum) prestamos_prov depositos_prov, by(ent provincia ym)
         if `first' == 0 append using `geo'
         local first = 0
         save `geo', replace
@@ -260,8 +332,9 @@ foreach m of local dirs {
 * consecutive monthly folders repeat the same quarter; keep one copy
 use `geo', clear
 duplicates drop ent provincia ym, force
-save `geo', replace
 
+tempfile geoq
+save `geoq'
 use `suc', clear
 * Banco Macro appears twice in Tucuman during 2019m11-2021m3 (accent
 * artifact in the raw files); add up the duplicated rows
@@ -270,8 +343,25 @@ collapse (sum) suc_plenas suc_esp suc_moviles dep_autom atm tas promocion acsf, 
 replace acsf = . if ym < ym(2021,4)   // collapse turns all-missing into zero
 isid ent provincia ym
 * amounts are quarterly, so they only fill the quarter-end months
-merge 1:1 ent provincia ym using `geo', nogen
+merge 1:1 ent provincia ym using `geoq', nogen
+chk_prov
 format ym %tm
+
+label var ent "Codigo de entidad BCRA"
+label var nombre "Nombre de la entidad"
+label var provincia "Provincia"
+label var ym "Mes"
+label var suc_plenas "Sucursales plenas habilitadas"
+label var suc_esp "Sucursales de operatoria especifica habilitadas"
+label var suc_moviles "Sucursales moviles habilitadas"
+label var dep_autom "Dependencias automatizadas habilitadas"
+label var atm "Cajeros automaticos habilitados"
+label var tas "Terminales de autoservicio habilitadas"
+label var promocion "Puestos de promocion habilitados"
+label var acsf "Agencias complementarias de serv. financieros (desde 2021m4)"
+label var prestamos_prov "Prestamos del banco en la provincia (trimestral, distribgeo IEF)"
+label var depositos_prov "Depositos del banco en la provincia (trimestral, distribgeo IEF)"
+label data "Presencia y negocio por banco x provincia, IEF BCRA"
 sort ent provincia ym
 save "$out/prestamos_depositos_prov.dta", replace
 
@@ -310,6 +400,15 @@ foreach m of local dirs {
 }
 use `car', clear
 format ym %tm
+
+label var ent "Codigo de entidad BCRA"
+label var nombre "Nombre de la entidad"
+label var ym "Mes"
+label var fuente "Archivo IEF de origen (inf_adi, indicad o esd)"
+label var codigo "Codigo de linea BCRA"
+label var descripcion "Descripcion de la linea"
+label var valor "Valor a la fecha mas reciente del archivo"
+label data "Caracteristicas por banco x mes, IEF BCRA (formato largo)"
 sort ent ym fuente codigo
 save "$out/caracteristicas_bancos.dta", replace
 
