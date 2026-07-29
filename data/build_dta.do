@@ -12,6 +12,9 @@ version 17
 clear all
 set more off
 
+* repo root; adjust the path if your copy lives somewhere else
+cap cd "~/Documents/GitHub/Fintech-Dynamics"
+
 global inc "data/Inclusion_financiera_BCRA"
 global ief "data/raw/ief"
 global out "data/processed"
@@ -201,14 +204,29 @@ foreach m of local dirs {
         gen ent = real(v1)
         gen nombre = v2
         gen ym = ym(real(substr("`m'",1,4)), real(substr("`m'",5,2)))
-        gen suc_plenas  = real(v6)
-        gen suc_esp     = real(v7)
-        gen suc_moviles = real(v8)
-        gen dep_autom   = real(v9)
-        gen atm         = real(v10)
-        gen tas         = real(v11)
-        gen promocion   = real(v12)
-        gen acsf        = real(v13)
+        * the column layout changed in 2021m4; the old files carry extra
+        * columns (pending and total branches) and a different ordering
+        cap confirm variable v15
+        if _rc == 0 {
+            gen suc_plenas  = real(v6)
+            gen suc_esp     = real(v14)
+            gen suc_moviles = real(v9)
+            gen dep_autom   = real(v10)
+            gen atm         = real(v11)
+            gen tas         = real(v12)
+            gen promocion   = real(v13)
+            gen acsf        = .   // not reported before 2021m4
+        }
+        else {
+            gen suc_plenas  = real(v6)
+            gen suc_esp     = real(v7)
+            gen suc_moviles = real(v8)
+            gen dep_autom   = real(v9)
+            gen atm         = real(v10)
+            gen tas         = real(v11)
+            gen promocion   = real(v12)
+            gen acsf        = real(v13)
+        }
         drop if missing(ent)   // system and group aggregates (AA rows)
         keep ent nombre provincia ym suc_* dep_autom atm tas promocion acsf
         if `first' == 0 append using `suc'
@@ -245,6 +263,11 @@ duplicates drop ent provincia ym, force
 save `geo', replace
 
 use `suc', clear
+* Banco Macro appears twice in Tucuman during 2019m11-2021m3 (accent
+* artifact in the raw files); add up the duplicated rows
+collapse (sum) suc_plenas suc_esp suc_moviles dep_autom atm tas promocion acsf, ///
+    by(ent nombre provincia ym)
+replace acsf = . if ym < ym(2021,4)   // collapse turns all-missing into zero
 isid ent provincia ym
 * amounts are quarterly, so they only fill the quarter-end months
 merge 1:1 ent provincia ym using `geo', nogen
