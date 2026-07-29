@@ -149,14 +149,16 @@ sort provincia ym
 save "$out/inclusion_prov.dta", replace
 
 * ------------------------------------------------------------------
-* 2. tenencia_cuentas_prov.dta: province x quarter, account holdings
+* 2. account holdings, folded into the same province x month panel
 * ------------------------------------------------------------------
+* The series is quarterly (only March, June, September and December show
+* up in the raw file), so these variables are filled in quarter-end
+* months and missing in between.
 
 import delimited "$inc/BCRA_tenencia_cuentas_bancarias_y_de_pago_por_provincia.txt", ///
     varnames(1) bindquote(strict) stringcols(_all) clear
 fix_prov tx_provincia
 gen ym = ym(real(substr(cd_periodo,1,4)), real(substr(cd_periodo,5,2)))
-gen yq = qofd(dofm(ym))
 gen valor = real(subinstr(nu_valor, ",", ".", .))
 gen tipo = ""
 replace tipo = "ambas_ctas"        if strpos(tx_tipo_cuenta, "Bank and payment")
@@ -166,23 +168,24 @@ replace tipo = "min1_cta_bancaria" if strpos(tx_tipo_cuenta, "one bank")
 replace tipo = "min1_cta_pago"     if strpos(tx_tipo_cuenta, "one payment")
 replace tipo = "min1_cta"          if strpos(tx_tipo_cuenta, "one account")
 drop if tipo == ""
-keep provincia yq tipo valor
-reshape wide valor, i(provincia yq) j(tipo) string
+keep provincia ym tipo valor
+reshape wide valor, i(provincia ym) j(tipo) string
 rename valor* n_pers_*
 chk_prov
-format yq %tq
+tempfile ften
+save `ften'
 
-label var provincia "Provincia"
-label var yq "Trimestre"
-label var n_pers_solo_cta_bancaria "Personas con cuenta bancaria (CBU) solamente"
-label var n_pers_solo_cta_pago "Personas con cuenta de pago (CVU) solamente"
-label var n_pers_ambas_ctas "Personas con cuenta bancaria y de pago"
-label var n_pers_min1_cta_bancaria "Personas con al menos una cuenta bancaria"
-label var n_pers_min1_cta_pago "Personas con al menos una cuenta de pago"
-label var n_pers_min1_cta "Personas con al menos una cuenta"
-label data "Tenencia de cuentas bancarias y de pago BCRA, provincia x trimestre"
-sort provincia yq
-save "$out/tenencia_cuentas_prov.dta", replace
+use "$out/inclusion_prov.dta", clear
+merge 1:1 provincia ym using `ften', nogen
+chk_prov
+label var n_pers_solo_cta_bancaria "Personas con cuenta bancaria (CBU) solamente (trimestral)"
+label var n_pers_solo_cta_pago "Personas con cuenta de pago (CVU) solamente (trimestral)"
+label var n_pers_ambas_ctas "Personas con cuenta bancaria y de pago (trimestral)"
+label var n_pers_min1_cta_bancaria "Personas con al menos una cuenta bancaria (trimestral)"
+label var n_pers_min1_cta_pago "Personas con al menos una cuenta de pago (trimestral)"
+label var n_pers_min1_cta "Personas con al menos una cuenta (trimestral)"
+sort provincia ym
+save "$out/inclusion_prov.dta", replace
 
 * ------------------------------------------------------------------
 * 3. balances_bancos.dta: bank x month, balance sheet items as columns
@@ -412,4 +415,4 @@ label data "Caracteristicas por banco x mes, IEF BCRA (formato largo)"
 sort ent ym fuente codigo
 save "$out/caracteristicas_bancos.dta", replace
 
-di as text "done: 5 files written to $out"
+di as text "done: 4 files written to $out"
