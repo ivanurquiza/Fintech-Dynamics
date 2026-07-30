@@ -3,6 +3,9 @@
 * Inputs:  Inclusion_financiera_BCRA/   (province-level txt, utf-8)
 *          raw/ief/YYYYMM/              (monthly IEF files, latin-1; see
 *                                        descargar_ief_selectivo.py)
+*          raw/ipc/sh_ipc.xls           (INDEC CPI, national and regional)
+* Money variables in balances_bancos and prestamos_depositos_prov are
+* expressed at January 2026 prices, deflated with the national CPI.
 * Output:  processed/
 * Run with the working directory in data/.
 * Some months lack the provincial xlsx or inf_adi/indicad because the BCRA
@@ -12,7 +15,16 @@ version 17
 clear all
 set more off
 
-* paths are relative to data/, where this file lives
+* paths are relative to data/, where this file lives; the cd lines cover
+* the usual starting points (edit the first one if your repo lives elsewhere)
+cap cd "~/Documents/GitHub/Fintech-Dynamics/data"
+cap cd "data"
+cap confirm file "Inclusion_financiera_BCRA/BCRA_deudores_SFA_total_por_provincia.txt"
+if _rc {
+    di as error "run this file with the working directory in data/"
+    exit 601
+}
+
 global inc "Inclusion_financiera_BCRA"
 global ief "raw/ief"
 global out "processed"
@@ -188,7 +200,49 @@ sort provincia ym
 save "$out/inclusion_prov.dta", replace
 
 * ------------------------------------------------------------------
-* 3. balances_bancos.dta: bank x month, balance sheet items as columns
+* 3. ipc.dta: INDEC CPI, national and by region (dec-2016 = 100)
+* ------------------------------------------------------------------
+* Row positions checked against the July 2026 release of sh_ipc.xls
+* (dates in row 6, "Nivel general" in rows 10/40/70/100/130/160/190);
+* re-check them if the file is replaced by a newer release.
+
+import excel "raw/ipc/sh_ipc.xls", sheet("Índices IPC Cobertura Nacional") allstring clear
+keep if inlist(_n, 10, 40, 70, 100, 130, 160, 190)
+drop A
+destring _all, replace force
+xpose, clear
+drop if missing(v1)
+* columns are consecutive months starting December 2016
+gen ym = ym(2016,12) + _n - 1
+assert inrange(v1[1], 99.9, 100.1)   // base month must equal 100
+rename v1 ipc_nacional
+rename v2 ipc_gba
+rename v3 ipc_pampeana
+rename v4 ipc_noroeste
+rename v5 ipc_noreste
+rename v6 ipc_cuyo
+rename v7 ipc_patagonia
+order ym
+format ym %tm
+
+label var ym "Mes"
+label var ipc_nacional "IPC nivel general, total nacional (dic-2016=100)"
+label var ipc_gba "IPC nivel general, region GBA (dic-2016=100)"
+label var ipc_pampeana "IPC nivel general, region Pampeana (dic-2016=100)"
+label var ipc_noroeste "IPC nivel general, region Noroeste (dic-2016=100)"
+label var ipc_noreste "IPC nivel general, region Noreste (dic-2016=100)"
+label var ipc_cuyo "IPC nivel general, region Cuyo (dic-2016=100)"
+label var ipc_patagonia "IPC nivel general, region Patagonia (dic-2016=100)"
+label data "IPC INDEC, nacional y regiones"
+sort ym
+save "$out/ipc.dta", replace
+
+qui su ipc_nacional if ym == ym(2026,1), meanonly
+assert r(N) == 1   // stop here if the January 2026 index is not in the file
+global ipc_base = r(mean)
+
+* ------------------------------------------------------------------
+* 4. balances_bancos.dta: bank x month, balance sheet items as columns
 * ------------------------------------------------------------------
 * Selected accounts from baldet (codes are stable over 2018-2025):
 *   100000 assets            110000 cash             120000 securities
@@ -199,6 +253,40 @@ save "$out/inclusion_prov.dta", replace
 
 local dirs : dir "$ief" dirs "2*"
 local dirs : list sort dirs
+
+* institutional classification, from entint (monthly, so ownership or
+* charter changes are picked up when they happen):
+*   AA100 banks, AA110 public, AA120 private, AA121 private domestic,
+*   AA123/AA124 foreign (local subsidiary / branch), AA200 finance
+*   companies, AA210 domestic, AA220 foreign, AA910 top 10 private banks
+tempfile clasif
+local first = 1
+foreach m of local dirs {
+    cap confirm file "$ief/`m'/entint.txt"
+    if _rc continue
+    qui {
+        import delimited "$ief/`m'/entint.txt", delimiters(tab) ///
+            varnames(nonames) encoding("latin1") bindquote(strict) stringcols(_all) clear
+        gen ent = real(v1)
+        drop if missing(ent)
+        gen ym = ym(real(substr("`m'",1,4)), real(substr("`m'",5,2)))
+        gen byte es_banco            = v4 == "AA100"
+        gen byte banco_publico       = v4 == "AA110"
+        gen byte banco_privado       = v4 == "AA120"
+        gen byte banco_capnacional   = v4 == "AA121"
+        gen byte banco_capextranjero = inlist(v4, "AA123", "AA124")
+        gen byte cia_financiera      = v4 == "AA200"
+        gen byte cia_fin_extranjera  = v4 == "AA220"
+        gen byte top10_privados      = v4 == "AA910"
+        collapse (max) es_banco banco_publico banco_privado banco_capnacional ///
+            banco_capextranjero cia_financiera cia_fin_extranjera top10_privados, ///
+            by(ent ym)
+        if `first' == 0 append using `clasif'
+        local first = 0
+        save `clasif', replace
+    }
+}
+
 tempfile bal
 local first = 1
 foreach m of local dirs {
@@ -212,8 +300,12 @@ foreach m of local dirs {
         gen ent    = real(v1)
         gen nombre = v2
         gen ym     = ym(real(substr(v3,1,4)), real(substr(v3,5,2)))
-        gen double saldo = real(v6) + real(v7)   // one of the two sides is always zero
-        keep ent nombre ym v4 saldo
+        * signed balance: assets carry a debit balance, liabilities, equity
+        * and results a credit one; this keeps the sign of losses right
+        gen double saldo = cond(inlist(substr(v4,1,1), "1", "2"), ///
+            real(v6) - real(v7), real(v7) - real(v6))
+        gen pub = "`m'"   // publication month of the file
+        keep ent nombre ym v4 saldo pub
         reshape wide saldo, i(ent ym) j(v4) string
         if `first' == 0 append using `bal'
         local first = 0
@@ -221,6 +313,14 @@ foreach m of local dirs {
     }
 }
 use `bal', clear
+* files also carry balances of late-reporting banks for earlier months, so
+* the same bank-month can show up in more than one file; keep the most
+* recent publication
+bysort ent ym (pub): keep if _n == _N
+drop pub
+* the january 2018 files also carry a handful of late 2017m12 balances,
+* too few to form a usable month
+keep if ym >= ym(2018,1)
 rename saldo100000 activo
 rename saldo110000 efectivo
 rename saldo120000 titulos
@@ -236,6 +336,9 @@ rename saldo311740 dep_pfijo
 rename saldo400000 pn
 rename saldo500000 resultados
 format ym %tm
+
+merge 1:1 ent ym using `clasif', keep(master match) nogen
+merge m:1 ym using "$out/ipc.dta", keepusing(ipc_nacional) keep(master match) nogen
 
 label var ent "Codigo de entidad BCRA"
 label var nombre "Nombre de la entidad"
@@ -253,13 +356,29 @@ label var dep_cajaahorro "Depositos SPNF en caja de ahorros"
 label var dep_ctasueldo "Depositos SPNF en cuenta sueldo y previsional"
 label var dep_pfijo "Depositos SPNF a plazo fijo"
 label var pn "Patrimonio neto"
-label var resultados "Resultados"
+label var resultados "Resultados (positivo = ganancia)"
+* real versions at January 2026 prices, keeping the nominal series
+foreach v of varlist activo efectivo titulos prestamos prest_spnf pasivo ///
+    depositos dep_spnf dep_ctacte dep_cajaahorro dep_ctasueldo dep_pfijo pn resultados {
+    gen double `v'_r = `v' * $ipc_base / ipc_nacional
+    label var `v'_r "`: var label `v'' (pesos de 2026m1)"
+    label var `v' "`: var label `v'' (nominal)"
+}
+label var es_banco "Banco (AA100)"
+label var banco_publico "Banco publico (AA110)"
+label var banco_privado "Banco privado (AA120)"
+label var banco_capnacional "Banco local de capital nacional (AA121)"
+label var banco_capextranjero "Banco de capital extranjero o sucursal del exterior (AA123/AA124)"
+label var cia_financiera "Compania financiera (AA200)"
+label var cia_fin_extranjera "Compania financiera de capital extranjero (AA220)"
+label var top10_privados "Entre los 10 primeros bancos privados (AA910)"
+label var ipc_nacional "IPC nacional usado para deflactar (dic-2016=100)"
 label data "Balances mensuales por entidad, IEF BCRA (baldet)"
 sort ent ym
 save "$out/balances_bancos.dta", replace
 
 * ------------------------------------------------------------------
-* 4. prestamos_depositos_prov.dta: bank x province x month
+* 5. prestamos_depositos_prov.dta: bank x province x month
 * ------------------------------------------------------------------
 * Branches and ATMs come from suc_pcia (all months); loan and deposit
 * amounts come from the distribgeo xlsx (quarterly, missing in a few
@@ -350,6 +469,11 @@ merge 1:1 ent provincia ym using `geoq', nogen
 chk_prov
 format ym %tm
 
+merge m:1 ent ym using `clasif', keep(master match) nogen
+merge m:1 ym using "$out/ipc.dta", keepusing(ipc_nacional) keep(master match) nogen
+gen double prestamos_prov_r = prestamos_prov * $ipc_base / ipc_nacional
+gen double depositos_prov_r = depositos_prov * $ipc_base / ipc_nacional
+
 label var ent "Codigo de entidad BCRA"
 label var nombre "Nombre de la entidad"
 label var provincia "Provincia"
@@ -362,14 +486,25 @@ label var atm "Cajeros automaticos habilitados"
 label var tas "Terminales de autoservicio habilitadas"
 label var promocion "Puestos de promocion habilitados"
 label var acsf "Agencias complementarias de serv. financieros (desde 2021m4)"
-label var prestamos_prov "Prestamos del banco en la provincia (trimestral, distribgeo IEF)"
-label var depositos_prov "Depositos del banco en la provincia (trimestral, distribgeo IEF)"
+label var prestamos_prov "Prestamos del banco en la provincia (trimestral, nominal)"
+label var depositos_prov "Depositos del banco en la provincia (trimestral, nominal)"
+label var prestamos_prov_r "Prestamos del banco en la provincia (trimestral, pesos de 2026m1)"
+label var depositos_prov_r "Depositos del banco en la provincia (trimestral, pesos de 2026m1)"
+label var es_banco "Banco (AA100)"
+label var banco_publico "Banco publico (AA110)"
+label var banco_privado "Banco privado (AA120)"
+label var banco_capnacional "Banco local de capital nacional (AA121)"
+label var banco_capextranjero "Banco de capital extranjero o sucursal del exterior (AA123/AA124)"
+label var cia_financiera "Compania financiera (AA200)"
+label var cia_fin_extranjera "Compania financiera de capital extranjero (AA220)"
+label var top10_privados "Entre los 10 primeros bancos privados (AA910)"
+label var ipc_nacional "IPC nacional usado para deflactar (dic-2016=100)"
 label data "Presencia y negocio por banco x provincia, IEF BCRA"
 sort ent provincia ym
 save "$out/prestamos_depositos_prov.dta", replace
 
 * ------------------------------------------------------------------
-* 5. caracteristicas_bancos.dta: bank x month, long format
+* 6. caracteristicas_bancos.dta: bank x month, long format
 * ------------------------------------------------------------------
 * From inf_adi (accounts, cards, staff), indicad (indicators) and esd
 * (debtor status). Columns 6-10 of the raw files hold the last five
@@ -415,4 +550,4 @@ label data "Caracteristicas por banco x mes, IEF BCRA (formato largo)"
 sort ent ym fuente codigo
 save "$out/caracteristicas_bancos.dta", replace
 
-di as text "done: 4 files written to $out"
+di as text "done: 5 files written to $out"
