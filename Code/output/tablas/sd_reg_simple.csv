@@ -1,0 +1,37 @@
+shock,medida,spec,beta,se,t,N
+QR 2021m11,Caja de ahorros,(1) FE banco+mes,-0.1985,0.0294,-6.7508,1328
+QR 2021m11,Caja de ahorros,(2) + controles,-0.2019,0.0294,-6.8677,1328
+QR 2021m11,Caja de ahorros,(3) banco + tipo x mes,-0.2111,0.0308,-6.8521,1328
+QR 2021m11,Vista minorista,(1) FE banco+mes,-0.2142,0.0276,-7.7537,1328
+QR 2021m11,Vista minorista,(2) + controles,-0.2161,0.0276,-7.8359,1328
+QR 2021m11,Vista minorista,(3) banco + tipo x mes,-0.2268,0.029,-7.8352,1328
+QR 2021m11,Cta cte sin interes,(1) FE banco+mes,0.1132,0.0399,2.8359,1282
+QR 2021m11,Cta cte sin interes,(2) + controles,0.1307,0.0406,3.2149,1282
+QR 2021m11,Cta cte sin interes,(3) banco + tipo x mes,0.0916,0.0426,2.1513,1282
+QR 2021m11,Plazo fijo total,(1) FE banco+mes,-0.0129,0.0311,-0.4151,1477
+QR 2021m11,Plazo fijo total,(2) + controles,-0.0099,0.0314,-0.3157,1477
+QR 2021m11,Plazo fijo total,(3) banco + tipo x mes,0.0284,0.0319,0.8913,1477
+QR 2021m11,Cta cte esp PJ con interes,(1) FE banco+mes,-0.1643,0.1099,-1.495,772
+QR 2021m11,Cta cte esp PJ con interes,(2) + controles,-0.1054,0.111,-0.9497,772
+QR 2021m11,Cta cte esp PJ con interes,(3) banco + tipo x mes,-0.2918,0.1305,-2.2351,772
+QR 2021m11,Total SPNF pesos,(1) FE banco+mes,-0.0396,0.0229,-1.7298,1527
+QR 2021m11,Total SPNF pesos,(2) + controles,-0.0274,0.0225,-1.2197,1527
+QR 2021m11,Total SPNF pesos,(3) banco + tipo x mes,-0.0127,0.0235,-0.5423,1527
+Pull 2022m9,Caja de ahorros,(1) FE banco+mes,-0.0572,0.0332,-1.7216,1340
+Pull 2022m9,Caja de ahorros,(2) + controles,-0.0401,0.0329,-1.2218,1340
+Pull 2022m9,Caja de ahorros,(3) banco + tipo x mes,-0.0304,0.0347,-0.8754,1340
+Pull 2022m9,Vista minorista,(1) FE banco+mes,-0.0695,0.031,-2.2442,1340
+Pull 2022m9,Vista minorista,(2) + controles,-0.0477,0.0305,-1.5638,1340
+Pull 2022m9,Vista minorista,(3) banco + tipo x mes,-0.04,0.0322,-1.2393,1340
+Pull 2022m9,Cta cte sin interes,(1) FE banco+mes,-0.1693,0.0452,-3.7461,1279
+Pull 2022m9,Cta cte sin interes,(2) + controles,-0.1158,0.0459,-2.5227,1279
+Pull 2022m9,Cta cte sin interes,(3) banco + tipo x mes,-0.0863,0.0474,-1.8213,1279
+Pull 2022m9,Plazo fijo total,(1) FE banco+mes,-0.1263,0.0276,-4.5716,1496
+Pull 2022m9,Plazo fijo total,(2) + controles,-0.1138,0.0274,-4.1527,1496
+Pull 2022m9,Plazo fijo total,(3) banco + tipo x mes,-0.0855,0.028,-3.0501,1496
+Pull 2022m9,Cta cte esp PJ con interes,(1) FE banco+mes,0.127,0.0999,1.2713,795
+Pull 2022m9,Cta cte esp PJ con interes,(2) + controles,0.1416,0.1004,1.4103,795
+Pull 2022m9,Cta cte esp PJ con interes,(3) banco + tipo x mes,0.3215,0.1232,2.609,795
+Pull 2022m9,Total SPNF pesos,(1) FE banco+mes,-0.0586,0.0223,-2.6307,1530
+Pull 2022m9,Total SPNF pesos,(2) + controles,-0.0326,0.0209,-1.5614,1530
+Pull 2022m9,Total SPNF pesos,(3) banco + tipo x mes,-0.0341,0.023,-1.4844,1530

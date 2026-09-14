@@ -1,0 +1,15 @@
+billetera,entidad_legal,cuit,tecnologia,fondo,clase,gerente,depositaria,ent_bcra_depositaria,estado_verificacion,fuente
+Mercado Pago,Mercado Pago SRL,,fci,Mercado Fondo,A,Mercado Pago Asset Management S.A. (antes Industrial Asset Management),Banco Industrial S.A.,322,fondo verificado / clase A a confirmar,reglamento de gestion BIND + ficha CAFCI 798
+Personal Pay,Telecom (entidad exacta sin confirmar),,fci,Delta Pesos,X,Delta Asset Management S.A.,Banco de Valores S.A.,198,clase X verificada en sitio de Delta,deltaam.com.ar valores cuotaparte por clase
+Prex,Prex Card S.A.S.,33716797959,fci,Allaria Ahorro,E,Allaria Ledesma Fondos Administrados SGFCI,a confirmar,,clase E verificada en sitio de Allaria,allariafondos.com.ar
+Fiwind,Financewind S.A.,,fci,Delta Pesos,A (a confirmar),Delta Asset Management S.A.,Banco de Valores S.A.,198,fondo verificado / clase no,centro de ayuda Fiwind
+Lemon,Bay Treasure Caramel S.A.,30717534952,fci,Vinci Compass Liquidez (antes Fima Premium),F,Vinci Compass,a confirmar,,cambio de proveedor en 2026 - verificar fecha exacta,prensa jul-2026
+Cocos,Cocos Capital,,fci,Cocos Ahorro,A,Cocos Asset Management S.A.,Banco Comafi,299,verificado en sitio del fondo,fci.cocos.capital
+AstroPay,Conexion de Altura S.A.,,fci,ST Zero,D,Southern Trust SGFCI,Banco de Valores S.A.,198,a verificar,prensa
+Claro Pay,,,fci,SBS Ahorro Pesos,A,SBS Asset Management,Banco de Valores S.A.,198,a verificar,prensa
+Global66,,,fci,Compass Liquidez,A,Vinci Compass,a confirmar,,a verificar,prensa
+Ualá,Ualá Bank S.A.U. (ex Wilobank),30715654632,ambas,Ualintec Ahorro Pesos,A,Ualintec Inversiones S.A.U.,Banco de Valores S.A.,198,doble vehiculo: banco propio (ent 384) + FCI,T&C propios de Uala
+Naranja X,Naranja Digital Compania Financiera S.A.U.,30716639645,balance,,,,,,remunera contra balance propio - es compania financiera,T&C Naranja X
+Brubank,Brubank S.A.U.,,balance,,,,,143,es banco: el saldo es deposito,-
+Cuenta DNI,Banco de la Provincia de Buenos Aires,,balance,,,,,14,es banco,-
+MODO,Play Digital S.A.,30716829436,ninguna,,,,,,iniciador - no custodia fondos,T&C MODO

@@ -1,0 +1,55 @@
+fecha_norma,fecha_vigencia,com_a,bloque,tema,que_hace,alcance,valor_p_identificacion,confianza
+2016-06-03,,A5982,interoperabilidad,transferencias inmediatas,nuevos canales PPM/PEI,nacional,bajo,media
+2016-11-14,2016-11-15,A6099,interoperabilidad,DEBIN,crea el debito inmediato,nacional,bajo,alta
+2017-03-31,2017-04-01,A6212,interoperabilidad,tarjetas,cronograma decreciente de tasas de intercambio,nacional,medio,alta
+2018-05-15,2018-09-12,A6510,interoperabilidad,CVU,crea el CVU e impone interoperabilidad CVU-CBU,nacional,medio,alta
+2019-05-10,2019-07-01,A6698,interoperabilidad,DEBIN,rediseno; crea el DEBIN recurrente,nacional,medio,media
+2020-01-09,2020-01-31,A6859,psp,regimen PSP,crea el regimen PSPCP y el Registro,nacional,alto,alta
+2020-01-30,2020-03-01,A6885,psp,custodia de fondos,100% en cuentas a la vista; YA habilita fondos comunes de dinero,nacional,alto,alta
+2020-04-23,2020-04-24,A6992,encajes,FCI money market,crea la categoria en efectivo minimo al 0%,nacional,alto,alta
+2020-10-30,2020-12-07,A7153,interoperabilidad,Transferencias 3.0,crea T3.0 y el pago con transferencia,nacional,alto,alta
+2020-12-05,2020-12-07,A7175,interoperabilidad,Transferencias 3.0,emite los textos ordenados,nacional,bajo,alta
+2021-09-08,2021-09-09,A7361,interoperabilidad,transferencias,15 segundos 24x7; limites en UVA,nacional,bajo,alta
+2021-09-17,2021-10-17,A7367,interoperabilidad,competencia,prohibe conductas anticompetitivas de administradores de esquema,nacional,medio,alta
+2021-11-16,2021-11-29,A7400,interoperabilidad,QR,QR interoperable pleno entre billeteras,nacional,alto,alta
+2021-11-25,2022-03-01,A7409,interoperabilidad,QR,tolerancia transitoria de 25 segundos,nacional,bajo,alta
+2021-12-30,2022-01-01,A7429,encajes,PSP,encaje 100% sobre cuentas de PSPOCP con fondos de clientes,nacional,alto,alta
+2022-02-24,2022-04-15,A7462,interoperabilidad,registro billeteras,crea el Registro de billeteras digitales interoperables,firma x tiempo,muy alto,alta
+2022-04-01,2022-04-02,A7485,interoperabilidad,precios,arancel PCT 0.6-0.8% y tasas de intercambio por tamano,comercio,alto,alta
+2022-04-27,2022-04-28,A7495,psp,texto ordenado,renumera 3.1.2 a 4.1.2; NO habilita nada nuevo,nacional,nulo,alta
+2022-05-19,2022-09-30,A7514,interoperabilidad,pull,la billetera puede debitar cuenta de otra entidad,nacional,alto,alta
+2022-06-29,2022-06-30,A7533,interoperabilidad,CBU y QR,CBU a toda cuenta a la vista; QR estandar BCRA,nacional,medio,alta
+2022-09-22,2022-09-22,A7611,encajes,PSP,permite integrar hasta 45 pp del 1.3.14 con Bonos del Tesoro,nacional,alto,alta
+2023-05-18,2024-04-30,A7769,interoperabilidad,QR credito,QR de tarjeta de credito interoperable (dos veces prorrogado),nacional,alto,alta
+2023-08-24,2023-08-25,A7825,psp,pass-through,obliga a trasladar integramente al cliente la retribucion,nacional,muy alto,alta
+2023-09-14,2024-04-30,A7841,interoperabilidad,DEBIN,discontinua el DEBIN recurrente como fondeo (prorrogado),nacional,alto,alta
+2023-11-30,,A7905,interoperabilidad,prorroga,difiere QR-credito a 2024-02-01 y DEBIN a 2024-03-01,nacional,medio,alta
+2024-01-11,,A7942,interoperabilidad,prorroga,difiere ambas al 2024-04-30,nacional,medio,alta
+2024-04-11,2024-04-15,A7988,encajes,FCI money market,0% a 10%,nacional,alto,alta
+2024-04-30,2024-04-30,A7996,interoperabilidad,pull,consentimiento OAuth2; arancel 0.3% si tacito,nacional,medio,alta
+2024-05-02,2024-05-15,A8000,encajes,FCI money market,10% a 15%,nacional,alto,alta
+2024-05-30,2024-05-30,A8030,interoperabilidad,pull,elimina el arancel del pull,nacional,medio,alta
+2024-05-30,2024-07-29,A8032,interoperabilidad,QR reciprocidad,la billetera debe leer QR de todo adquirente; tope 0.07%,nacional,alto,media
+2024-06-06,2024-06-07,A8038,psp,texto ordenado,adecuaciones; mantiene 4.1.2,nacional,nulo,alta
+2024-08-16,2024-08-17,A8091,interoperabilidad,precios,los precios de transferencias no pueden ser % del monto,nacional,medio,alta
+2024-09-10,2024-09-11,A8102,psp,regimen informativo,instaura el RI de PSPCP,nacional,medio,alta
+2024-10-08,2024-10-09,A8114,interoperabilidad,QR,consolida reciprocidad y tope 0.07%,nacional,bajo,alta
+2024-10-17,2024-11-01,A8119,encajes,FCI money market,15% a 20%,nacional,alto,alta
+2024-12-19,2025-08-01,A8162,interoperabilidad,aranceles,elimina el arancel uniforme por rubro; acreditacion en 2 dias,comercio,alto,alta
+2025-01-30,2025-01-31,A8189,encajes,FCI money market,extiende a precancelables; cierre de arbitraje,nacional,alto,alta
+2025-02-27,2025-05-12,A8206,interoperabilidad,VQR,Viaje con QR; integracion obligatoria mutua,geografico escalonado,muy alto,alta
+2025-07-17,2025-08-01,A8281,encajes,FCI money market,20% a 30%,nacional,alto,alta
+2025-07-24,2025-07-25,A8286,encajes,pases,pases pasivos al encaje de cauciones; cierre de arbitraje,nacional,medio,alta
+2025-07-25,2025-07-26,A8287,interoperabilidad,PSP,nuevas funciones registrables: Administrador QR e Iniciacion,nacional,medio,alta
+2025-07-31,2025-08-01,A8289,encajes,FCI money market,30% a 40%,nacional,alto,alta
+2025-08-14,2025-08-18,A8302,encajes,operativo,integracion diaria; cargo 3xTAMAR; +5 pp transitorios,nacional,medio,media
+2025-08-19,2025-08-20,A8303,interoperabilidad,texto ordenado,t.o. SNP servicios de pago,nacional,bajo,alta
+2025-08-21,2025-09-01,A8305,encajes,pases,pases y cauciones por posicion neta,nacional,bajo,media
+2025-08-25,2025-09-01,A8306,encajes,general,+3.5 pp a todas las obligaciones en pesos,nacional,alto,alta
+2025-10-30,2025-11-01,A8350,encajes,operativo,vuelve a promedio mensual con minimo diario 95%,nacional,bajo,media
+2025-11-20,2025-12-01,A8355,encajes,general,elimina los +3.5 pp,nacional,alto,alta
+2026-02-12,,A8399,interoperabilidad,texto ordenado,t.o. transferencias complementarias,nacional,bajo,alta
+2026-03-02,2026-08-31,A8406,interoperabilidad,cobro con transferencia,reemplaza el debito recurrente en cobranza de cuotas,nacional,alto,alta
+2026-04-30,2026-07-29,A8432,psp,PSP as a service,constitucion regular en el pais; billetera de terceros,nacional,medio,alta
+2026-05-14,2026-05-15,A8436,interoperabilidad,texto ordenado,actualizacion t.o. transferencias complementarias,nacional,bajo,alta
+2026-07-14,2026-07-15,A8454,psp,texto ordenado,actualizacion t.o. PSP,nacional,bajo,alta

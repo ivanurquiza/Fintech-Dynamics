@@ -1,0 +1,578 @@
+ent,name,regulator_class,group,economic_group,has_balance
+7,BANCO DE GALICIA Y BUENOS AIRES S.A.,financial_institution,private_bank,,1
+11,BANCO DE LA NACION ARGENTINA,financial_institution,public_bank,,1
+14,BANCO DE LA PROVINCIA DE BUENOS AIRES,financial_institution,public_bank,,1
+15,INDUSTRIAL AND COMMERCIAL BANK OF CHINA (ARGENTINA) S.A.U.,financial_institution,,,1
+16,CITIBANK N.A.,financial_institution,,,1
+17,BANCO BBVA ARGENTINA S.A.,financial_institution,private_bank,,1
+20,BANCO DE LA PROVINCIA DE CORDOBA S.A.,financial_institution,public_bank,,1
+27,BANCO SUPERVIELLE S.A.,financial_institution,private_bank,,1
+29,BANCO DE LA CIUDAD DE BUENOS AIRES,financial_institution,public_bank,,1
+34,BANCO PATAGONIA S.A.,financial_institution,private_bank,,1
+44,BANCO HIPOTECARIO S.A.,financial_institution,private_bank,,1
+45,BANCO DE SAN JUAN S.A.,financial_institution,private_bank,,1
+65,BANCO MUNICIPAL DE ROSARIO,financial_institution,private_bank,,1
+72,BANCO SANTANDER ARGENTINA S.A.,financial_institution,private_bank,,1
+83,BANCO DEL CHUBUT S.A.,financial_institution,private_bank,,1
+86,BANCO DE SANTA CRUZ S.A.,financial_institution,private_bank,,1
+93,BANCO DE LA PAMPA SA,financial_institution,public_bank,,1
+94,BANCO DE CORRIENTES S.A.,financial_institution,private_bank,,1
+97,BANCO PROVINCIA DEL NEUQUÉN SOCIEDAD ANÓNIMA,financial_institution,private_bank,,1
+131,BANK OF CHINA LIMITED SUCURSAL BUENOS AIRES,financial_institution,,,1
+143,BRUBANK S.A.U.,financial_institution,,,1
+147,BIBANK S.A.,financial_institution,,,1
+150,Banco GGAL SA,financial_institution,private_bank,,1
+165,"JPMORGAN CHASE BANK, NATIONAL ASSOCIATION (SUCURSAL BUENOS AIRES)",financial_institution,,,1
+191,BANCO CREDICOOP COOPERATIVO LIMITADO,financial_institution,private_bank,,1
+198,BANCO DE VALORES S.A.,financial_institution,private_bank,,1
+247,BANCO ROELA S.A.,financial_institution,private_bank,,1
+254,BANCO MARIVA S.A.,financial_institution,private_bank,,1
+259,BANCO BMA S.A.U.,financial_institution,private_bank,,1
+266,BNP PARIBAS,financial_institution,,,1
+268,BANCO PROVINCIA DE TIERRA DEL FUEGO,financial_institution,private_bank,,1
+269,BANCO DE LA REPUBLICA ORIENTAL DEL URUGUAY,financial_institution,private_bank,,1
+277,BANCO SAENZ S.A.,financial_institution,private_bank,,1
+281,BANCO MERIDIAN S.A.,financial_institution,private_bank,,1
+285,BANCO MACRO S.A.,financial_institution,private_bank,,1
+299,BANCO COMAFI SOCIEDAD ANONIMA,financial_institution,private_bank,,1
+300,BANCO DE INVERSION Y COMERCIO EXTERIOR S.A.,financial_institution,private_bank,,1
+301,BANCO PIANO S.A.,financial_institution,private_bank,,1
+305,BANCO JULIO SOCIEDAD ANONIMA,financial_institution,private_bank,,1
+309,BANCO RIOJA SOCIEDAD ANONIMA UNIPERSONAL,financial_institution,private_bank,,1
+310,BANCO DEL SOL S.A.,financial_institution,private_bank,,1
+311,NUEVO BANCO DEL CHACO S. A.,financial_institution,private_bank,,1
+312,BANCO VOII S.A.,financial_institution,private_bank,,1
+315,BANCO DE FORMOSA S.A.,financial_institution,private_bank,,1
+319,BANCO CMF S.A.,financial_institution,private_bank,,1
+321,BANCO DE SANTIAGO DEL ESTERO S.A.,financial_institution,private_bank,,1
+322,BANCO INDUSTRIAL S.A.,financial_institution,private_bank,,1
+330,NUEVO BANCO DE SANTA FE SOCIEDAD ANONIMA,financial_institution,private_bank,,1
+331,BANCO CETELEM ARGENTINA S.A.,financial_institution,private_bank,,1
+332,BANCO DE SERVICIOS FINANCIEROS CARREFOUR SAU,financial_institution,private_bank,,1
+338,BANCO DE SERVICIOS Y TRANSACCIONES SAU,financial_institution,private_bank,,1
+339,RCI BANQUE S.A.,financial_institution,,,1
+340,BACS BANCO DE CREDITO Y SECURITIZACION S.A.,financial_institution,private_bank,,1
+341,BANCO MASVENTAS S.A.,financial_institution,private_bank,,1
+384,UALA BANK S.A.U.,financial_institution,,,1
+386,NUEVO BANCO DE ENTRE RÍOS S.A.,financial_institution,private_bank,,1
+389,BANCO COLUMBIA S.A.,financial_institution,private_bank,,1
+426,BANCO BICA S.A.,financial_institution,private_bank,,1
+431,BANCO COINAG S.A.,financial_institution,private_bank,,1
+432,BANCO DE COMERCIO S.A.,financial_institution,private_bank,,1
+435,BANCO SUCREDITO REGIONAL S.A.U.,financial_institution,private_bank,,1
+448,BANCO DINO S.A.,financial_institution,private_bank,,1
+10303,F.F PRIVADO YATASTO,financial_trust,,,0
+10494,F.F. Y DE ADM. CHACO-ACTIVOS FINANCIEROS,financial_trust,,,0
+10500,F.F. Y DE ADM. LA RIOJA REFINANCIAMIENTO DEL SECTOR PROD.,financial_trust,,,0
+10608,F.F. Y DE ADM FIDEICOMISO DEUDORES AGROP BNA ENTRE RIOS,financial_trust,,,0
+10628,F.F. PRIVADO ASSET RECOVERY 5,financial_trust,,,0
+10692,F.F. PRIVADO FRANKEL,financial_trust,,,0
+10812,F.F. Y DE ADM REFINANCIAMIENTO DEUDORES AGROP PCIA DE RIO NEGRO,financial_trust,,,0
+10903,FF PRIVADO GESTIÓN DE ACTIVOS IV,financial_trust,,,0
+10914,RECUPERO DE ACTIVOS FIDEICOMISO FINANCIERO,financial_trust,,,0
+10915,F.F. CENTURIA,financial_trust,,,0
+10921,Flex Fideicomiso Financiero,financial_trust,,,0
+10922,Maipú Fideicomiso Financiero,financial_trust,,,0
+10923,F.F. PRIVADO GREEN LIGHT,financial_trust,,,0
+10924,CREDITIA FIDEICOMISO FINANCIERO,financial_trust,,,0
+40011,BELAT CROWDLENDING ARGENTINA,financial_trust,,,0
+44077,COMPAÑIA FINANCIERA ARGENTINA S.A.,financial_trust,,,1
+44088,VOLKSWAGEN FINANCIAL SERVICES COMPAÑIA FINANCIERA S.A.,financial_trust,,,1
+44092,FCA COMPAÑIA FINANCIERA S.A.,financial_trust,,,1
+44093,GPAT COMPAÑIA FINANCIERA S.A.U.,financial_trust,,,1
+44094,MERCEDES-BENZ COMPAÑÍA FINANCIERA ARGENTINA S.A.,financial_trust,,,1
+44095,ROMBO COMPAÑÍA FINANCIERA S.A.,financial_trust,,,1
+44096,JOHN DEERE CREDIT COMPAÑÍA FINANCIERA S.A.,financial_trust,,,1
+44098,PSA FINANCE ARGENTINA COMPAÑÍA FINANCIERA S.A.,financial_trust,,,1
+44099,TOYOTA COMPAÑÍA FINANCIERA DE ARGENTINA S.A.,financial_trust,,,1
+45030,NARANJA DIGITAL COMPAÑÍA FINANCIERA S.A.U.,finance_company,,,1
+45056,MONTEMAR COMPAÑIA FINANCIERA S.A.,finance_company,,,1
+45072,REBA COMPAÑIA FINANCIERA S.A.,finance_company,,,1
+50001,ACINDAR PYMES SGR,credit_guarantee_soc,,,0
+50002,AFFIDAVIT SGR,credit_guarantee_soc,,,0
+50003,AGROAVAL SGR,credit_guarantee_soc,,,0
+50004,ARGENPYMES SGR,credit_guarantee_soc,,,0
+50005,AVAL FEDERAL SGR,credit_guarantee_soc,,,0
+50006,AVAL GANADERO SGR,credit_guarantee_soc,,,0
+50007,AVAL RURAL SGR,credit_guarantee_soc,,,0
+50009,CAMPO AVAL SGR,credit_guarantee_soc,,,0
+50010,Poder SGR,credit_guarantee_soc,,,0
+50011,CUYO AVAL SGR,credit_guarantee_soc,,,0
+50012,DON MARIO SGR,credit_guarantee_soc,,,0
+50013,Garantias BIND SGR,credit_guarantee_soc,,,0
+50014,GARANTIZAR SGR,credit_guarantee_soc,,,0
+50015,INTEGRA PYMES SGR,credit_guarantee_soc,,,0
+50017,PROMOVER SGR,credit_guarantee_soc,,,0
+50018,POTENCIAR SGR,credit_guarantee_soc,,,0
+50020,AFB AVALES S.G.R.,credit_guarantee_soc,,,0
+50021,AVAL AR SGR,credit_guarantee_soc,,,0
+50022,PYME AVAL SGR,credit_guarantee_soc,,,0
+50023,UNION SGR,credit_guarantee_soc,,,0
+50024,AVAL FERTIL SGR,credit_guarantee_soc,,,0
+50025,AVALES DEL CENTRO SGR,credit_guarantee_soc,,,0
+50026,CRECER SGR,credit_guarantee_soc,,,0
+50027,AFIANZAR SGR,credit_guarantee_soc,,,0
+50028,AVALUAR S.G.R.,credit_guarantee_soc,,,0
+50029,Fid Aval SGR,credit_guarantee_soc,,,0
+50030,Confiables S.G.R.,credit_guarantee_soc,,,0
+50032,RESILIENCIA SGR,credit_guarantee_soc,,,0
+50033,Crédito Argentino S.G.R.,credit_guarantee_soc,,,0
+50034,Rig Avales S.G.R,credit_guarantee_soc,,,0
+50035,Conaval S.G.R.,credit_guarantee_soc,,,0
+50036,Móvil S.G.R.,credit_guarantee_soc,,,0
+50037,FIDEM SGR,credit_guarantee_soc,,,0
+50038,INNOVA SGR,credit_guarantee_soc,,,0
+50039,FINTECH SGR,credit_guarantee_soc,,,0
+50040,MILLS SGR,credit_guarantee_soc,,,0
+50041,ALIANZA S.G.R.,credit_guarantee_soc,,,0
+50042,SOLIDUM S.G.R.,credit_guarantee_soc,,,0
+50043,Neuquèn Pymes SGR,credit_guarantee_soc,,,0
+50044,Trend SGR,credit_guarantee_soc,,,0
+50046,Argentina Ciudad S.G.R.,credit_guarantee_soc,,,0
+50047,Patagonia S.G.R.,credit_guarantee_soc,,,0
+50048,Zofinger S.G.R.,credit_guarantee_soc,,,0
+51001,FONDO DE GARANTÍAS BUENOS AIRES SAPEM (FOGABA SAPEM),public_guarantee_fund,,,0
+51002,FONDO DE GARANTÍAS DEL CHACO (FOGACH),public_guarantee_fund,,,0
+51003,FONDO DE GARANTÍAS ARGENTINO,public_guarantee_fund,,,0
+51004,Fondo de Garantía Público La Rioja Sociedad Anónima Unipersonal,public_guarantee_fund,,,0
+51005,Garantía San Juan SAPEM,public_guarantee_fund,,,0
+51006,Fondo de garantía para el Desarrollo Fueguino S.A.P.E.M. (FOGADEF),public_guarantee_fund,,,0
+51007,Fideicomiso de Afectación Específica para Garantizar Pymes No Sujetas,public_guarantee_fund,,,0
+51008,Fondo de Garantías Entre Ríos S.A.P.E.M. (FO.GA.ER. S.A.P.E.M.),public_guarantee_fund,,,0
+51009,Fideicomiso de Garantías Pampeanas (FoGaPam),public_guarantee_fund,,,0
+51011,FONDO DE GARANTIA CFI,public_guarantee_fund,,,0
+51012,"Fondo específico de riesgo fiduciario de la ""Provincia de Santa Fe""",public_guarantee_fund,,,0
+51013,"Fondo de Garantías para el desarrollo de las Micro, Pequeñas y Mediana",public_guarantee_fund,,,0
+51014,Fondo de Garantía Catamarca Sociedad Anónima con Participación Estatal,public_guarantee_fund,,,0
+51015,"Fideicomiso Fondo de Garantías para el Desarrollo de las Micro, Pequeñ",public_guarantee_fund,,,0
+51016,Fondo de Garantía Río Negro (FoGaRío),public_guarantee_fund,,,0
+55001,Accicom S.A.,non_financial_lender,,,0
+55002,AMEPORT Mutual del Personal del Estado Nacional Provincial Municipal y,non_financial_lender,,,0
+55003,Asociación Mutual Centro Litoral,non_financial_lender,,,0
+55004,Asociación Mutual de la Economía Solidaria,non_financial_lender,,,0
+55005,Asociación Mutual de las Fuerzas Armadas y Seguridad (AMFAYS),non_financial_lender,,,0
+55006,Asociación Mutual del Litoral 17 de Enero,non_financial_lender,,,0
+55008,Asociación Mutual Unión Solidaria,non_financial_lender,,,0
+55009,Carsa S.A.,non_financial_lender,,,0
+55011,Cetrogar S.A.,non_financial_lender,,,0
+55012,CFN SRL,non_financial_lender,,,0
+55013,Cierto Argentina S.A.,non_financial_lender,,,0
+55015,Coppel S.A.,non_financial_lender,,,0
+55017,"Cooperativa de Crédito, Consumo y Servicios Sociales La Plata Ltda.",non_financial_lender,,,0
+55018,Cooperativa de Provisión de Obras y Servicios Publicos y de Créditos C,non_financial_lender,,,0
+55020,"Palmares Cooperativa de Vivienda, Crédito, Consumo y Servicios Sociale",non_financial_lender,,,0
+55023,Credifácil S.A.F. y M.,non_financial_lender,,,0
+55024,CREDICUOTAS CONSUMO S.A.,non_financial_lender,,,0
+55025,Cuotitas S.A.,non_financial_lender,,,0
+55026,Decréditos S.A.,non_financial_lender,,,0
+55027,ELECTRONICA MEGATONE SRL,non_financial_lender,,,0
+55028,Favanet S.A.,non_financial_lender,,,0
+55030,Fravega S.A.C.I. e I.,non_financial_lender,,,0
+55034,Hogar Total S.A.,non_financial_lender,,,0
+55040,N&F Capital Markets S.A.,non_financial_lender,,,0
+55041,Naldo Lombardi S.A.,non_financial_lender,,,0
+55042,"Plural Cooperativa de Crédito, Consumo y Vivienda Ltda.",non_financial_lender,,,0
+55043,Provincia Leasing S.A.,non_financial_lender,,,0
+55046,Schejter y Schejter S.A.,non_financial_lender,,,0
+55048,Sicom S.A.,non_financial_lender,,,0
+55049,Surfinan S.A.,non_financial_lender,,,0
+55051,Tinuviel S.A.,non_financial_lender,,,0
+55052,Asociación Mututal 18 de Julio,non_financial_lender,,,0
+55053,Casa Luis Chemes S.A.,non_financial_lender,,,0
+55054,Crédito Directo S.A.,non_financial_lender,,,0
+55057,Mutual Integral de Servicios,non_financial_lender,,,0
+55060,"Gran Cooperativa de Crédito, Vivienda, Consumo y Servicios Sociales Li",non_financial_lender,,,0
+55061,Radio Sapienza S.A.,non_financial_lender,,,0
+55063,Uninverc S.A.,non_financial_lender,,,0
+55068,Hendel Hogar S.A.,non_financial_lender,,,0
+55070,PRO MUJER SERVICIOS FINANCIEROS SA,non_financial_lender,,,0
+55073,Oportunidad Microfinanciera Latinoamericana OMLA S.A.,non_financial_lender,,,0
+55075,IDUN INVERSIONES S.A.,non_financial_lender,,,0
+55076,Grupo Prestafácil S.A.,non_financial_lender,,,0
+55077,Asociación Mutual de Escribanos,non_financial_lender,,,0
+55080,DAP Cooperativa de Crédito y Consumo Ltda.,non_financial_lender,,,0
+55082,Asociación Mutual de Pensionados Sociales Ley 5110,non_financial_lender,,,0
+55083,AGL CAPITAL S.A.,non_financial_lender,,,0
+55085,Moni Online S.A.,non_financial_lender,,,0
+55086,Asociación Mutual Asis,non_financial_lender,,,0
+55088,Asociación Mutual de Docentes de la Provincia del Chaco,non_financial_lender,,,0
+55090,DILCAR S.A.,non_financial_lender,,,0
+55091,CREDIAR S.A.,non_financial_lender,,,0
+55092,Dante Tanino Hogar S.A.,non_financial_lender,,,0
+55093,FINANCOMP S.A.,non_financial_lender,,,0
+55094,Genesys S.A.,non_financial_lender,,,0
+55095,CRENAC S.A.,non_financial_lender,,,0
+55096,FINANCIACIONES CUYO S.A.,non_financial_lender,,,0
+55098,CONSUMO S.A.,non_financial_lender,,,0
+55100,BAZAR AVENIDA S.A.,non_financial_lender,,,0
+55105,Ceibo Créditos S.A.,non_financial_lender,,,0
+55106,Asociación Mutual Net,non_financial_lender,,,0
+55107,ARGENCRED S.A.,non_financial_lender,,,0
+55109,"Credikot COOPERATIVA DE VIVIENDA, CRÉDITO Y CONSUMO  LTDA",non_financial_lender,,,0
+55111,Clank S.A.,non_financial_lender,,,0
+55115,Asociación Mutual Desarrollo Regional,non_financial_lender,,,0
+55118,"Cooperativa de Vivienda, Crédito y Consumo VIXA LTDA",non_financial_lender,,,0
+55120,Ebucar S.A.,non_financial_lender,,,0
+55121,Asociación Mutual Malvinas Argentinas,non_financial_lender,,,0
+55123,"Cooperativa 2001 de Vivienda, Crédito y Consumo Ltda.",non_financial_lender,,,0
+55124,Plusrasgo S.A.,non_financial_lender,,,0
+55125,"Cooperativa de Vivienda, Crédito, Consumo y Servicios Sociales Candela",non_financial_lender,,,0
+55128,Crediser Argentina S.A.,non_financial_lender,,,0
+55129,OK CONSUMER FINANCE S.A.,non_financial_lender,,,0
+55130,"Mutual de Jubilados, Retirados y Pensionados Provinciales",non_financial_lender,,,0
+55132,TIENDAJUBILO S.A.,non_financial_lender,,,0
+55133,Rotas S.A.,non_financial_lender,,,0
+55134,MAXIHOGAR SRL,non_financial_lender,,,0
+55136,Vento Capital S.A.,non_financial_lender,,,0
+55137,"Cooperativa de Crédito, Consumo, Vivienda y Servicios Sociales Videgar",non_financial_lender,,,0
+55141,AD CREDITOS S.A.,non_financial_lender,,,0
+55142,Emprendimiento La Luisina SRL,non_financial_lender,,,0
+55143,Mutual Asistencial y Social,non_financial_lender,,,0
+55144,ASOCIACION MUTUAL 23 DE SEPTIEMBRE,non_financial_lender,,,0
+55146,LIPACO MERCANTIL S.A.,non_financial_lender,,,0
+55148,Collins S.A.,non_financial_lender,,,0
+55149,INDO S.A.,non_financial_lender,,,0
+55151,PREVER COOPERATIVA DE CRÉDITO Y CONSUMO LTDA,non_financial_lender,,,0
+55152,Asociación Mutual de protección Familiar,non_financial_lender,,,0
+55156,UNIGESTION SA,non_financial_lender,,,0
+55158,San Cristóbal Bienes Raíces S.A.,non_financial_lender,,,0
+55159,"TCC Cooperativa de Crédito, Consumo y Vivienda Limitada",non_financial_lender,,,0
+55160,"Arrayanes Cooperativa de Vivienda, Crédito y Consumo",non_financial_lender,,,0
+55162,Aquiprestamos.com S.A.,non_financial_lender,,,0
+55163,FF Capital Group S.A.,non_financial_lender,,,0
+55166,Waynicoin S.A.,non_financial_lender,,,0
+55170,"Cooperativa de Viv., Cred. y Con. Amigal Ltda.",non_financial_lender,,,0
+55172,FINARES S.A.,non_financial_lender,,,0
+55175,"Cooperativa Interamericana de Credito, Vivienda y Consumo Limitada",non_financial_lender,,,0
+55176,Trend Capital S.A.,non_financial_lender,,,0
+55177,"Catalinas Cooperativa de Crédito, Consumo y Vivienda Ltda.",non_financial_lender,,,0
+55178,Cooperativa de Crédito y Vivienda Unicred Ltda.,non_financial_lender,,,0
+55182,Crediserv S.A.,non_financial_lender,,,0
+55183,"Nobel Cooperativa de Crédito, Vivienda y Servicio de Transporte Ltda.",non_financial_lender,,,0
+55185,"Cooperativa de Crédito, Consumo y Vvienda Fincredit Ltda",non_financial_lender,,,0
+55186,Confinance S.A.,non_financial_lender,,,0
+55188,"Cooperativa de Vivienda, Crédito y Consumo del Litoral Ltda",non_financial_lender,,,0
+55189,Compañía General de Finanzas S.A.,non_financial_lender,,,0
+55190,Gestisur Cooperativa de crédito y vivienda Ltda,non_financial_lender,,,0
+55192,G Y F Factoring S.A.,non_financial_lender,,,0
+55194,Policredito Coop. Limitada de Crédito y Vivienda.,non_financial_lender,,,0
+55195,Libertador Factoring S.A.,non_financial_lender,,,0
+55196,Cooperativa Concred de crédito y vivienda Ltda.,non_financial_lender,,,0
+55197,"Invercoop Cooperativa de Crédito, Consumo y Vivienda Limitada",non_financial_lender,,,0
+55198,Cooperativa de Vivienda Crédito y Consumo Concepción Limitada,non_financial_lender,,,0
+55200,"Cooperativa de Vivienda, Crédito y Consumo para el Desarrollo Ltda (CO",non_financial_lender,,,0
+55201,Credit & Investment SRL,non_financial_lender,,,0
+55202,Depsa Valores S.A.,non_financial_lender,,,0
+55204,Development Corp S.A.,non_financial_lender,,,0
+55207,Mills Capital S.A.,non_financial_lender,,,0
+55208,GS Negocios S.A.,non_financial_lender,,,0
+55210,"Del País Cooperativa de Crédito, Consumo y Vivienda Ltda.",non_financial_lender,,,0
+55213,Multiplycard S.A.,non_financial_lender,,,0
+55214,Credinegocios Moscasil S.A.,non_financial_lender,,,0
+55217,Vilco Inversiones S.A.,non_financial_lender,,,0
+55219,Cooperativa de Vivienda Crédito y Consumo La Integradora Limitada,non_financial_lender,,,0
+55222,BFA Inversiones y Finanzas S.A.,non_financial_lender,,,0
+55225,EXI S.A.,non_financial_lender,,,0
+55226,MSM Leasing S.A.,non_financial_lender,,,0
+55227,Mutual Federada 25 de junio SPR,non_financial_lender,,,0
+55233,CGM Leasing Argentina S.A.,non_financial_lender,,,0
+55234,"1° de Julio Cooperativa de Vivienda, Crédito y Consumo Ltda",non_financial_lender,,,0
+55235,Valerza S.A.,non_financial_lender,,,0
+55241,Joamar S.A.,non_financial_lender,,,0
+55242,MG-Group S.A.,non_financial_lender,,,0
+55244,MUTUAL DEL AGRO LA INDUSTRIA Y EL COMERCIO DE SANTA FE,non_financial_lender,,,0
+55245,CUOTAFACIL SA,non_financial_lender,,,0
+55251,BR CAPITAL S.A.,non_financial_lender,,,0
+55255,DINEFA S.R.L.,non_financial_lender,,,0
+55256,MSA CREDITOS S.A.,non_financial_lender,,,0
+55258,HOMYT S.A,non_financial_lender,,,0
+55263,FINANCOMPRA S.A.,non_financial_lender,,,0
+55265,CRE-DIN S. A.,non_financial_lender,,,0
+55266,CRÉDITO DEL VALLE S.A.,non_financial_lender,,,0
+55267,ACUATRO S.A.,non_financial_lender,,,0
+55269,SERVICIOS OSTENDE SRL,non_financial_lender,,,0
+55272,CRÉDITOS ESCOBAR S.A,non_financial_lender,,,0
+55273,INSIGHT GROUP SA,non_financial_lender,,,0
+55277,ASOCIACION MUTUAL FIAT CONCORD,non_financial_lender,,,0
+55279,SOLVENTA SAS,non_financial_lender,,,0
+55281,ASOCIACION MUTUAL CELESOL DE SERVICIOS INTEGRALES Y EDUCATIVOS,non_financial_lender,,,0
+55282,MINS LFE SAS,non_financial_lender,,,0
+55283,S&S SOLUTIONS SA,non_financial_lender,,,0
+55287,COBRO FACIL SRL,non_financial_lender,,,0
+55288,GLOBAL CAPITAL MANAGEMENT SA,non_financial_lender,,,0
+55289,UNION PROVINCIAL ASOCIACION MUTUAL,non_financial_lender,,,0
+55292,TRANSCON S.A.U.,non_financial_lender,,,0
+55293,CREDIFAX S.A.,non_financial_lender,,,0
+55294,CREDITECH SA,non_financial_lender,,,0
+55295,CREDITAM LIMITADA S.A.,non_financial_lender,,,0
+55296,SANTANDER CONSUMER SA,non_financial_lender,,,0
+55297,FINANCITY S.A.,non_financial_lender,,,0
+55298,ESPACIO DIGITAL S.A,non_financial_lender,,,0
+55300,Buenos Aires Creditos SA,non_financial_lender,,,0
+55301,CRESCENS S.A,non_financial_lender,,,0
+55302,TRAYECTORIA LEASING S.A.U.,non_financial_lender,,,0
+55304,TU ADELANTO SA,non_financial_lender,,,0
+55307,RED DE PRESTAMOS SA,non_financial_lender,,,0
+55309,MUTUAL DEL PERSONAL DEL MINISTERIO DE EDUCACION Y JUSTICIA DE LA NACIO,non_financial_lender,,,0
+55310,MACRO SOLUTIONS SA,non_financial_lender,,,0
+55312,ABAN DIGITAL S.A.,non_financial_lender,,,0
+55313,MICODEMO S.A.,non_financial_lender,,,0
+55314,REGGIO DI CALABRIA S.R.L.,non_financial_lender,,,0
+55315,FINANCRED SA,non_financial_lender,,,0
+55316,KALIMA S.A.,non_financial_lender,,,0
+55317,BARSATEX S.A.,non_financial_lender,,,0
+55318,DLL LEASING ARGENTINA S.A.,non_financial_lender,,,0
+55319,AGCO CAPITAL ARGENTINA S.A.,non_financial_lender,,,0
+55320,POTSDAM S.A.,non_financial_lender,,,0
+55321,SOSER SA,non_financial_lender,,,0
+55323,SOLUCIONES INTEGRALES S.A.,non_financial_lender,,,0
+55328,LOGINCREDIT S.A.,non_financial_lender,,,0
+55329,ALAU TECNOLOGIA S. A. U.,non_financial_lender,,,0
+55330,CREDILOW S.A.,non_financial_lender,,,0
+55332,FENIXCRED S.A.,non_financial_lender,,,0
+55333,El Nexo S.A.,non_financial_lender,,,0
+55334,VALUARTE SRL,non_financial_lender,,,0
+55336,OSCAR BARBIERI S.A.,non_financial_lender,,,0
+55338,TRESSFEN SA,non_financial_lender,,,0
+55339,MAEBA S.R.L.,non_financial_lender,,,0
+55340,FINANPRO S.R.L.,non_financial_lender,,,0
+55341,PROAVALAR S.R.L,non_financial_lender,,,0
+55342,"Asistir Cooperativa de Vivienda, Credito, Consumo y Servicios Sociales",non_financial_lender,,,0
+55344,JALIN S.A.,non_financial_lender,,,0
+55345,CSPB INVERSIONES SA,non_financial_lender,,,0
+55346,Number S.A.,non_financial_lender,,,0
+55349,AGILCRED S.A.,non_financial_lender,,,0
+55352,Cooperativa de vivienda crédito y consumo San José Ltda,non_financial_lender,,,0
+55353,VIKA 2010 S.A.,non_financial_lender,,,0
+55355,FULLCREDIT SA,non_financial_lender,,,0
+55356,G10 EMPRENDIMIENTOS SA,non_financial_lender,,,0
+55357,CREDIBEL S.A.,non_financial_lender,,,0
+55359,DHF SA,non_financial_lender,,,0
+55360,Credi-Full S.A.,non_financial_lender,,,0
+55361,DESARROLLOS AYTER S.A.,non_financial_lender,,,0
+55364,CONFICRED SA,non_financial_lender,,,0
+55366,CYAP NOW S.A.,non_financial_lender,,,0
+55367,INVERSORA DEL NORTE S.A.,non_financial_lender,,,0
+55370,CREDIL S.R.L.,non_financial_lender,,,0
+55371,ASOCIACION MUTUAL EMLEADOS DE COMERCIO DE ROSARIO,non_financial_lender,,,0
+55374,EJS S.A.,non_financial_lender,,,0
+55375,COOP. DE CRED. CONS. Y VIV. MASELE LTDA,non_financial_lender,,,0
+55376,COMERPYSRL,non_financial_lender,,,0
+55377,Clave Creditos S.A.,non_financial_lender,,,0
+55381,CREDIGOL S.A.,non_financial_lender,,,0
+55382,UFINAN SA,non_financial_lender,,,0
+55385,Mifloder SAS,non_financial_lender,,,0
+55386,WIBOND SAS,non_financial_lender,,,0
+55388,CREDLAP S.A.,non_financial_lender,,,0
+55389,SI CAPITAL,non_financial_lender,,,0
+55390,COAFIN SA,non_financial_lender,,,0
+55391,QUICK CREDIT S.A.,non_financial_lender,,,0
+55392,NEGOCIOS FINANCIEROS CREDILOMAS S.A.,non_financial_lender,,,0
+55393,SEILOP S.R.L.,non_financial_lender,,,0
+55395,CIGANDA & MASARIE,non_financial_lender,,,0
+55396,MERIDIANO NORTE S.A.,non_financial_lender,,,0
+55397,BELMONT CAPITAL S.A.,non_financial_lender,,,0
+55399,MAMLUSENA S.A.,non_financial_lender,,,0
+55400,MICRO SISTEMAS S. A.,non_financial_lender,,,0
+55403,FACILCRED S.A.,non_financial_lender,,,0
+55404,THE RAINBOW FAMILY S.A.,non_financial_lender,,,0
+55405,Oneri Bilancio S.A.,non_financial_lender,,,0
+55408,SCANIA CREDIT ARGENTINA S.A.U.,non_financial_lender,,,0
+55409,Finet SA,non_financial_lender,,,0
+55411,CREDITAN COOPERATIVA DE VIVIENDA CREDITO Y CONSUMO LTDA,non_financial_lender,,,0
+55412,Delivery Hero Financial Services SA,non_financial_lender,,,0
+55413,ASOCIACIÓN MUTUAL PILARENSES,non_financial_lender,,,0
+55414,INTERCAPITAL FACTORING S.A.,non_financial_lender,,,0
+55415,BLM SERVICIOS SA,non_financial_lender,,,0
+55416,FLODER ARGENTINA SA,non_financial_lender,,,0
+55419,Daneio SA,non_financial_lender,,,0
+55420,MARIAS CAPITAL SA,non_financial_lender,,,0
+55424,SOLUCIONES FINANCORP SA,non_financial_lender,,,0
+55425,MOOVITECH S.A.,non_financial_lender,,,0
+55429,POLO VALORES S.A.,non_financial_lender,,,0
+55432,LUCSE INVERSIONES S.A.,non_financial_lender,,,0
+55435,PARABENS TRUST S.A.,non_financial_lender,,,0
+55436,POWERFIN SA,non_financial_lender,,,0
+55439,MUTUAL DE PORTEÑA ASOCIACION CULTURAL Y DEPORTIVA,non_financial_lender,,,0
+55442,LA LOMITA CAPITAL S.A.,non_financial_lender,,,0
+55444,CREDISE S.A.,non_financial_lender,,,0
+55445,BLM DESARROLLOS SA,non_financial_lender,,,0
+55449,FIDEICOMISO PRIVADO DE ADMINISTRACION CENFIDE,non_financial_lender,,,0
+55450,PRESTY SRL,non_financial_lender,,,0
+55453,Cooperativa de Credito Consumo y Vivienda Baymor Ltda,non_financial_lender,,,0
+55454,BIA SRL,non_financial_lender,,,0
+55456,PREST SPC SAS,non_financial_lender,,,0
+55457,MIGXION S.A.,non_financial_lender,,,0
+55458,SOLVERS S.A.,non_financial_lender,,,0
+55459,Admiral Finance SA,non_financial_lender,,,0
+55462,CORVALAN 1160 SA,non_financial_lender,,,0
+55463,MILLASA S.A.,non_financial_lender,,,0
+55464,MUTUAL DE INTEGRANTES DEL PODER JUDICIAL,non_financial_lender,,,0
+55465,Dar Prestamos S.A.,non_financial_lender,,,0
+55466,AXXIA LENDING S.A.,non_financial_lender,,,0
+55467,UQUIA S.R.L,non_financial_lender,,,0
+55469,BOCAS DEL TORO S.A.,non_financial_lender,,,0
+55470,CAMELUS S.A.,non_financial_lender,,,0
+55472,SUMA INVERSIONES S.A.,non_financial_lender,,,0
+55473,GrupoCDG SA,non_financial_lender,,,0
+55474,FIDEICOMISOS MANDATOS E INVERSIONES SA,non_financial_lender,,,0
+55477,MERITE S.A.,non_financial_lender,,,0
+55479,FIDUCIA ARGENTINA S.A.S.,non_financial_lender,,,0
+55480,RUMKALO S.R.L.,non_financial_lender,,,0
+55481,AGMA S.R.L,non_financial_lender,,,0
+55482,Asociación Mutual de Ayuda Entre Asociados y Adherentes de Romang Futb,non_financial_lender,,,0
+55483,Longcred S.A.,non_financial_lender,,,0
+55484,Inclusión Financiera Integral SRL,non_financial_lender,,,0
+55485,G&T GESTIONES COMERCIALES S.A.,non_financial_lender,,,0
+55486,TODOPAY S.R.L.,non_financial_lender,,,0
+55487,ASOCIACION MUTUAL PARA EL PERSONAL DEL PODER JUDICIAL Y TRABAJADORES I,non_financial_lender,,,0
+55488,RIO FRANCO SA,non_financial_lender,,,0
+55490,ASOCIACION MUTUAL DE ASOCIADOS DEL CLUB ATLETICO UNION,non_financial_lender,,,0
+55492,Asociación Mutual de Trabajadores Argentinos Estatales,non_financial_lender,,,0
+55493,OPENCRED SA,non_financial_lender,,,0
+55494,Mifloder SAS,non_financial_lender,,,0
+55495,SOCIEDAD DE CREDITO SA,non_financial_lender,,,0
+55496,Cash Online S.A.,non_financial_lender,,,0
+55497,FINLATINA SA,non_financial_lender,,,0
+55498,LANTI SA,non_financial_lender,,,0
+55501,DIE ZUKUNFT SA,non_financial_lender,,,0
+55502,ATYLIUM FINANCE GROUP SA,non_financial_lender,,,0
+55505,Cash Market SA,non_financial_lender,,,0
+55506,CYFSA S.A.,non_financial_lender,,,0
+55507,FINANZAS DIGITALES SAS,non_financial_lender,,,0
+55510,FINANLEASE S.A,non_financial_lender,,,0
+55511,ASOCIACION MUTUAL 9 DE JULIO OLIMPICO FREYRE,non_financial_lender,,,0
+55512,TRADING PROFIT S.A.,non_financial_lender,,,0
+55513,IXPAY SA,non_financial_lender,,,0
+55514,CARTASUR CARDS S.A.U,non_financial_lender,,,0
+55515,Fidelity SRL,non_financial_lender,,,0
+55516,M&B COMPANY S. A. S.,non_financial_lender,,,0
+55520,"Asociación Mutual Trabajadores del Hospital de Pediatria SAMIC ""Profes",non_financial_lender,,,0
+55521,GRAY MATTER SRL,non_financial_lender,,,0
+55523,COMERCIAL FERSA SRL,non_financial_lender,,,0
+55524,ASOCIACION MUTUAL 7 DE AGOSTO,non_financial_lender,,,0
+55525,ASOCIACION MUTUAL GRAL J JOSE DE URQUIZA,non_financial_lender,,,0
+55526,Asociacion Mutual Progreso Entrerriano,non_financial_lender,,,0
+55531,ARGENTUM CAPITAL SA,non_financial_lender,,,0
+55532,PLUS COOPERATIVA DE CREDITO CONS Y VIV LTDA.,non_financial_lender,,,0
+55534,Mutual 22 de septiembre,non_financial_lender,,,0
+55535,WCA CAPITAL S. A. S.,non_financial_lender,,,0
+55538,CORDOBA VALORES S.A.,non_financial_lender,,,0
+55539,FRANKFURT S.A.,non_financial_lender,,,0
+55541,Blue Capital S.R.L,non_financial_lender,,,0
+55543,VISIR SA,non_financial_lender,,,0
+55544,YOLO CASH S.A.,non_financial_lender,,,0
+55545,GZM SOLUCIONES S.A,non_financial_lender,,,0
+55547,sistemas unificados de credito dirigido SA,non_financial_lender,,,0
+55554,PRESTACIONES S.A.,non_financial_lender,,,0
+55558,GRUPO SACAR S.A.,non_financial_lender,,,0
+55561,TJS CAPITAL S.A.,non_financial_lender,,,0
+55562,SERVICIOS CADMA SA,non_financial_lender,,,0
+55565,CREDINA S.A.,non_financial_lender,,,0
+55566,SALOMON S.A. SOCIEDAD ANONIMA,non_financial_lender,,,0
+55574,"Cooperativa de Vivienda, Crédito y Consumo Finadi Limitada",non_financial_lender,,,0
+55575,GRECO INVERSIONES SRL,non_financial_lender,,,0
+55577,BLOQUES S.A.,non_financial_lender,,,0
+55579,DEAMPRO S.R.L.,non_financial_lender,,,0
+55580,Platinum Viajes S.A.,non_financial_lender,,,0
+55582,VERTIX S.A.,non_financial_lender,,,0
+55584,CONSUMEX S.A.,non_financial_lender,,,0
+55586,WUNDER S.A.,non_financial_lender,,,0
+55588,SIMBA TRADING S.A.,non_financial_lender,,,0
+55598,AVANCRED SAS,non_financial_lender,,,0
+65203,CRÉDITO REGIONAL COMPAÑÍA FINANCIERA S.A.U.,non_financial_lender,,,1
+70101,AMERICAN EXPRESS ARGENTINA S.A.,non_financial_lender,,,0
+70116,SISTEMAS UNIFICADOS DE CREDITO DIRIGIDO S.A,non_financial_lender,,,0
+70140,COTO CENTRO INTEGRAL DE COMERCIALIZAC SA,non_financial_lender,,,0
+70141,YPF S.A.,non_financial_lender,,,0
+70142,ALARFIN S.A.,non_financial_lender,,,0
+70147,CENCOSUD S.A.,non_financial_lender,,,0
+70154,TELEPEAJE S.A.,non_financial_lender,,,0
+70166,PRESTAMAS S.A.,non_financial_lender,,,0
+70168,Findi S.A.,non_financial_lender,,,0
+70210,ITALCRED S.A.,non_financial_lender,,,0
+70212,CREDI-PAZ S.A.,non_financial_lender,,,0
+70218,CARTASUR CARDS S.A.U,non_financial_lender,,,0
+70224,TARJETAS DEL MAR S.A.,non_financial_lender,,,0
+70228,SANTA MONICA S.A.,non_financial_lender,,,0
+70229,CONTAR S.A.,non_financial_lender,,,0
+70231,MUTUAL DE ASOC Y ADHER CLUB SPORTS SALTO,non_financial_lender,,,0
+70234,NUEVA CARD S.A.,non_financial_lender,,,0
+70239,FERTIL FINANZAS S.A.,non_financial_lender,,,0
+70248,FAVACARD S.A,non_financial_lender,,,0
+70252,JUCARD JUNIN S.R.L.,non_financial_lender,,,0
+70257,TARTAN S.A.,non_financial_lender,,,0
+70268,Asociación Mutual 20 de Julio,non_financial_lender,,,0
+70269,"Credinos Cooperativa de Vivienda, Crédito, Consumo, Servicios Asistenc",non_financial_lender,,,0
+70270,Asociación Mutual Club Social Deportivo Ascensión,non_financial_lender,,,0
+70301,Tarjeta Pampeana S.A,non_financial_lender,,,0
+70407,TALOR SOCIEDAD COLECTIVA,non_financial_lender,,,0
+70408,TARJETA NARANJA S.A.U.,non_financial_lender,,,0
+70411,TEVISAL S.A.,non_financial_lender,,,0
+70412,Zafiro S.A.,non_financial_lender,,,0
+70413,VILLTER S.R.L.,non_financial_lender,,,0
+70420,Corfa Servi S.R.L.,non_financial_lender,,,0
+70421,MUTUAL COYSPU,non_financial_lender,,,0
+70424,Tarjeta PL S.A.,non_financial_lender,,,0
+70429,MUTUAL DE LAS COMUNIDADES,non_financial_lender,,,0
+70430,ASOC. MUTUAL DEL CLUB ALMAFUERTE DE LAS VARILLAS,non_financial_lender,,,0
+70433,SISCOM S.R.L.,non_financial_lender,,,0
+70434,Coincidir S.A.,non_financial_lender,,,0
+70435,SERVICIOS FECESCOR S.A,non_financial_lender,,,0
+70503,LOCRED SRL,non_financial_lender,,,0
+70603,COOP SERV ADM VTAS CRED Y CRED GUIA LTDA,non_financial_lender,,,0
+70802,S.A. CLUB DEL ESTE,non_financial_lender,,,0
+70803,SISTEMA DE CREDITO DE ENTRE RIOS S.A.,non_financial_lender,,,0
+70805,DILFER S.A.,non_financial_lender,,,0
+70806,EMPRENDER S.A.,non_financial_lender,,,0
+70808,Caja Municipal de Préstamos Sociedad de Economía Mixta,non_financial_lender,,,0
+70903,Única compañía de Crédito S.A.,non_financial_lender,,,0
+71101,NOA CARD S.A.,non_financial_lender,,,0
+71103,GLOBAL S.R.L.,non_financial_lender,,,0
+71202,EMPRESUR S.A.,non_financial_lender,,,0
+71204,Crédito Móvil S.A.,non_financial_lender,,,0
+71302,CUMAR SA,non_financial_lender,,,0
+71402,CENTRO CARD S.A.,non_financial_lender,,,0
+71605,AVALON CREDITOS PERSONALES S.A.,non_financial_lender,,,0
+71801,DATA 2000 S.A.,non_financial_lender,,,0
+71803,VISION S.A.,non_financial_lender,,,0
+72101,ASOC MUT AYUDA ASOC ADHER CLUB ATL UNION,non_financial_lender,,,0
+72102,ASOCIACION MUTUAL DEL CLUB A. ARGENTINO,non_financial_lender,,,0
+72103,CLUB ATLETICO SAN JORGE MUTUAL Y SOCIAL,non_financial_lender,,,0
+72104,MUTUAL SOCIOS ASOC MEDIC ROSARIO,non_financial_lender,,,0
+72106,ASOCIACION MUTUAL VENADO TUERTO,non_financial_lender,,,0
+72112,ASOC MUTUAL SOC CTRO EC CAÑADA DE GOMEZ,non_financial_lender,,,0
+72113,MUTUAL ENTRE ASOC COOPER MUTUAL PATRONAL,non_financial_lender,,,0
+72117,ASOC MUT CONSEJ ARROYOS COOP EMP MULTIPL,non_financial_lender,,,0
+72123,SOCIEDAD ARG DE SOCORROS MUTUO CORONDA,non_financial_lender,,,0
+72126,CREDISOL S.A.,non_financial_lender,,,0
+72128,ASOCIACION MUTUAL CLUB COLON DE SAN JUSTO,non_financial_lender,,,0
+72129,ASOCIACION MUTUAL CLUB ATLETICO PILAR,non_financial_lender,,,0
+72131,Asociación Mutual del Personal Jerárquico de Bancos Oficiales Nacional,non_financial_lender,,,0
+72132,Asociación Mutual de Ayuda entre Asociados y Adherentes del Club Depor,non_financial_lender,,,0
+72133,CREDIFIAR S.A.,non_financial_lender,,,0
+72134,Asociación Mutual de Ayuda entre Asociados y Adherentes del Club Atlét,non_financial_lender,,,0
+72135,Asociación Mutual PYME RURAL,non_financial_lender,,,0
+72136,Asociación Mutualista del Club Central San Carlos,non_financial_lender,,,0
+72303,CREDIMAS S.A.,non_financial_lender,,,0
+72304,TARJETA TITANIO S.A.,non_financial_lender,,,0
+72306,VALLE FERTIL S.A.,non_financial_lender,,,0
+72307,CAJA POPULAR DE AHORROS PCIA DE TUCUMAN,non_financial_lender,,,0
+72308,CASTILLO S.A.C.I.F.I.A.,non_financial_lender,,,0
+72501,TDF S.A.,non_financial_lender,,,0
+72607,"FIRENZE COOPERATIVA DE CRÉDITO, CONSUMO, VIVIENDA, TURISMO Y SERVICIOS",non_financial_lender,,,0
+72613,NORYSUR SOCIEDAD ANONIMA,non_financial_lender,,,0
+72614,MUTUAL DE DOCENTES DE NEUQUEN,non_financial_lender,,,0
+72616,CORDOBA VALORES S.A.,non_financial_lender,,,0
+72618,ASOCIACION MUTUAL DE ASOCIADOS Y ADHERENTES DEL CENTRO JUVENIL SPORTIV,non_financial_lender,,,0
+72622,ASOCIACION MUTUAL SANTA AGUSTINA,non_financial_lender,,,0
+72624,JASIDIM S.A.,non_financial_lender,,,0
+72626,INC SERVICIOS FINANCIEROS S.A.S.,non_financial_lender,,,0
+72630,FINANROL SA,non_financial_lender,,,0
+72631,COOPERATIVA DE PROVISION DE BIENES Y SERVICIOS ALLEN LTDA,non_financial_lender,,,0
+72632,Mifloder SAS,non_financial_lender,,,0
+72633,COOPERATIVA FARO LTDA,non_financial_lender,,,0
+72634,MERCADOLIBRE S.R.L.,non_financial_lender,,,0
+72638,Pago Virtual del Sur S.A.,non_financial_lender,,,0
+72639,SILOHUB ARGENTINA S.A.S.,non_financial_lender,,,0
+72649,FINANROL SA,non_financial_lender,,,0

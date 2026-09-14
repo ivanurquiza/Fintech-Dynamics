@@ -1,3 +1,20 @@
-data/raw/
+# macOS y Office
 .DS_Store
 **/.DS_Store
+~$*
+
+# datos: nada de lo pesado ni de lo identificado va al repo
+[Dd]ata/raw/
+[Dd]ata/processed/cendeu/
+*.parquet
+*.7z
+*.7Z
+
+# entornos y temporales
+_to_delete/
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.duckdb_tmp/
+.tmp/
+Code/output/tmp/
