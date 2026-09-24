@@ -313,8 +313,13 @@ local codes_sect  "311100 311400 311700 315100 315400 315700 311106 311112 31113
 local codes_ars   "311706 311712 311718 311722 311723 311724 311725 311726 311730 311731 311735 311736 311738 311740 311742 311744 311745 311747 311751 311753 311754 311766 311767 311783 311785 311786 311788 311789 311790 311791 311792 311793"
 local codes_usd   "315706 315712 315718 315723 315724 315725 315731 315732 315733 315737 315742 315743 315751 315753 315754 315781 315783 315784 315785 315786 315787 315788 315790 315791 315792 315793 315794"
 local codes_egr   "521003 521021 521062 521063 521064 521065 521080 521092 521093 521112 521113 525003 525062 525063 525064 525065"
+* asset side: liquidity instruments of the BCRA and the Treasury, plus the
+* accounts that hold reserve requirements. Species-level accounts open and
+* close with the instrument: LELIQ ends 2024m1, LEFI runs 2024m7-2025m6.
+local codes_act   "111015 111017 111021 111025 121000 125000 121003 121016 121040 121058 121091 121092 121093 125003 125016 125042 125058"
+local codes_pase  "141104 141124 141134 141143 141144 141433 145120 141153 141169 141170 145153"
 local codes_ing   "511047 511048 511049 511050 511051 511052 511053 511054 511107 511111 511113"
-local codes_all   "`codes_tot' `codes_sect' `codes_ars' `codes_usd' `codes_egr' `codes_ing'"
+local codes_all   "`codes_tot' `codes_sect' `codes_ars' `codes_usd' `codes_egr' `codes_ing' `codes_act' `codes_pase'"
 foreach m of local dirs {
     cap confirm file "$raw/bcra_ief/`m'/baldet.txt"
     if _rc continue
@@ -478,6 +483,35 @@ rename saldo525062 int_ctacte_usd_acum
 rename saldo525063 int_cajaahorro_usd_acum
 rename saldo525064 int_pf_usd_acum
 rename saldo525065 int_otras_imp_usd_acum
+* liquidity instruments of the BCRA and the Treasury, and reserve holdings
+rename saldo111015 bcra_ctacte
+rename saldo111017 otras_ctas_efvomin
+rename saldo111021 otras_ctas_noefvomin
+rename saldo111025 bcra_ctaesp
+rename saldo121003 titpub_ars_vr
+rename saldo121016 titpub_ars_ca
+rename saldo121040 titpub_ars_vr2
+rename saldo125003 titpub_usd_vr
+rename saldo125016 titpub_usd_ca
+rename saldo125042 titpub_usd_vr2
+rename saldo121000 tit_ars_tot
+rename saldo125000 tit_usd_tot
+rename saldo121058 leliq
+rename saldo125058 ledic_usd
+rename saldo121091 lefi_a
+rename saldo121092 lefi_b
+rename saldo121093 lefi_c
+rename saldo141104 pase_nofin_tp
+rename saldo141124 pase_cpra_term
+rename saldo141134 pase_fin_tp
+rename saldo141143 pase_fin_a
+rename saldo141144 pase_fin_b
+rename saldo141433 pase_reg_monet
+rename saldo145120 pase_nofin_tp_usd
+rename saldo141153 bcra_ctaesp_gtias
+rename saldo141169 bcra_dep_indisp_camb
+rename saldo141170 bcra_dep_indisp_otros
+rename saldo145153 bcra_ctaesp_gtias_usd
 format ym %tm
 
 * result accounts are cumulative within the fiscal year (january restarts
@@ -510,6 +544,29 @@ gen double dep_pf_total_usd = dep_pf_transf_usd + dep_pf_intransf_usd + dep_prec
 gen double dep_especiales_usd = dep_esp_depcanc_usd + dep_esp_financ_usd + dep_esp_fomento_usd ///
     + dep_esp_depcanc2_usd + dep_esp_regular_usd + dep_esp_l27260a_usd + dep_esp_l27260c_usd ///
     + dep_repatr_ca_usd + dep_repatr_pf_usd + dep_repatr_esp_usd + dep_repatr_pfesp_usd + dep_repatr_aporte_usd
+
+* liquidity position vis-a-vis the BCRA and the Treasury.
+* Built on the subtotals of the chart of accounts, not on the species lines.
+* Banks differ in the line they use for the same instrument: in 2024m7 the
+* three LEFI accounts pick up only 5.7 of the 9.6 trillion the BCRA reports
+* in series 196, and within the peso block the balance moves between the
+* measurement-criterion lines. The subtotals 121000 and 125000 are exactly
+* additive over their species, so they absorb that choice. Private
+* securities are inside 121000 but stay below 2% of it throughout.
+* lefi and leliq are kept for description only, never as an intensity.
+* See Data/docs/nota_lefi_leliq.md
+gen double lefi       = lefi_a + lefi_b + lefi_c
+gen double titpub_ars = titpub_ars_vr + titpub_ars_ca + titpub_ars_vr2
+gen double titpub_usd = titpub_usd_vr + titpub_usd_ca + titpub_usd_vr2
+gen double pases_bcra = pase_nofin_tp + pase_cpra_term + pase_fin_tp + pase_fin_a ///
+    + pase_fin_b + pase_reg_monet + pase_nofin_tp_usd
+gen double bcra_dep   = bcra_ctacte + bcra_ctaesp + bcra_ctaesp_gtias ///
+    + bcra_dep_indisp_camb + bcra_dep_indisp_otros + bcra_ctaesp_gtias_usd
+gen double liq_publica = tit_ars_tot + pases_bcra + bcra_dep
+* outside the life of each instrument a zero is an artifact of the fill-in
+* rule above, not a holding of zero
+replace lefi  = . if ym < ym(2024,7) | ym > ym(2025,6)
+replace leliq = . if ym > ym(2024,2)
 
 merge 1:1 ent ym using `clasif', keep(master match) nogen
 merge m:1 ym using "$proc/ipc.dta", keepusing(ipc_nacional) keep(master match) nogen
@@ -671,6 +728,20 @@ label var cia_financiera "Compania financiera (AA200)"
 label var cia_fin_extranjera "Compania financiera de capital extranjero (AA220)"
 label var top10_privados "Entre los 10 primeros bancos privados (AA910)"
 label var ipc_nacional "IPC nacional usado para deflactar (dic-2016=100)"
+label var bcra_ctacte "Cuenta corriente en el BCRA, pesos"
+label var otras_ctas_efvomin "Otras cuentas corrientes computables para efectivo minimo"
+label var otras_ctas_noefvomin "Otras cuentas corrientes no computables para efectivo minimo"
+label var bcra_ctaesp "Cuentas corrientes especiales en el BCRA"
+label var tit_ars_tot "Titulos en pesos, subtotal 121000"
+label var tit_usd_tot "Titulos en moneda extranjera, subtotal 125000"
+label var titpub_ars "Titulos publicos en pesos"
+label var titpub_usd "Titulos publicos en moneda extranjera"
+label var leliq "Letras de Liquidez del BCRA (hasta 2024m1)"
+label var ledic_usd "Letras del BCRA LEDIV a tasa cero, moneda extranjera"
+label var lefi "Letras Fiscales de Liquidez (2024m7-2025m6, subestimada)"
+label var pases_bcra "Pases activos, capitales"
+label var bcra_dep "Depositos y cuentas en el BCRA"
+label var liq_publica "Posicion liquida en instrumentos del BCRA y del Tesoro"
 label data "Balances mensuales por entidad, IEF BCRA (baldet)"
 sort ent ym
 save "$proc/balances_bancos.dta", replace

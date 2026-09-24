@@ -1,0 +1,146 @@
+{
+  "files": [
+    {
+      "path": "Data/crosswalks/cendeu_lenders.csv",
+      "bytes": 62241,
+      "mtime_ns": 1789438239947497311
+    },
+    {
+      "path": "Data/processed/cendeu/deudores.parquet",
+      "bytes": 397464309,
+      "mtime_ns": 1788308342339779280
+    },
+    {
+      "path": "Data/processed/cendeu/padron.parquet",
+      "bytes": 740377065,
+      "mtime_ns": 1788366501830079354
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-00.parquet",
+      "bytes": 19388623,
+      "mtime_ns": 1788357067454215837
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-01.parquet",
+      "bytes": 19299452,
+      "mtime_ns": 1788357075848502034
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-02.parquet",
+      "bytes": 19094071,
+      "mtime_ns": 1788357083875125161
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-03.parquet",
+      "bytes": 18850793,
+      "mtime_ns": 1788357092333885659
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-04.parquet",
+      "bytes": 18609325,
+      "mtime_ns": 1788357100574063824
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-05.parquet",
+      "bytes": 18345199,
+      "mtime_ns": 1788357108783289120
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-06.parquet",
+      "bytes": 18155608,
+      "mtime_ns": 1788357117570033948
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-07.parquet",
+      "bytes": 17852770,
+      "mtime_ns": 1788357125454463170
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-08.parquet",
+      "bytes": 17569447,
+      "mtime_ns": 1788357133336633823
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-09.parquet",
+      "bytes": 17239980,
+      "mtime_ns": 1788357140827357861
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-10.parquet",
+      "bytes": 16858732,
+      "mtime_ns": 1788357148634481803
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-11.parquet",
+      "bytes": 16563832,
+      "mtime_ns": 1788357156873710242
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-12.parquet",
+      "bytes": 16259769,
+      "mtime_ns": 1788357164983355176
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-13.parquet",
+      "bytes": 15787479,
+      "mtime_ns": 1788357172966871689
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-14.parquet",
+      "bytes": 15352700,
+      "mtime_ns": 1788357181326319193
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-15.parquet",
+      "bytes": 14966131,
+      "mtime_ns": 1788357189908573595
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-16.parquet",
+      "bytes": 14573422,
+      "mtime_ns": 1788357197760430779
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-17.parquet",
+      "bytes": 14191938,
+      "mtime_ns": 1788357206212048826
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-18.parquet",
+      "bytes": 13820478,
+      "mtime_ns": 1788357214179952678
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-19.parquet",
+      "bytes": 13372684,
+      "mtime_ns": 1788357223941127476
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-20.parquet",
+      "bytes": 12874530,
+      "mtime_ns": 1788357233543603396
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-21.parquet",
+      "bytes": 12299726,
+      "mtime_ns": 1788357242871402436
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-22.parquet",
+      "bytes": 11606325,
+      "mtime_ns": 1788357252022187421
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-23.parquet",
+      "bytes": 10778666,
+      "mtime_ns": 1788357260599736603
+    }
+  ],
+  "packages": {
+    "duckdb": "1.5.5",
+    "pandas": "2.3.3",
+    "numpy": "2.2.6",
+    "pyarrow": "25.0.1",
+    "matplotlib": "3.10.9"
+  }
+}

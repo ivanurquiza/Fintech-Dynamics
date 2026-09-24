@@ -31,6 +31,11 @@ El orden completo del pipeline de datos está en `Data/README_data.md`.
 El [estado de revisión](Methodological_Notes/estado_revision_2026-09-13.md)
 documenta la cobertura comprobada y las limitaciones pendientes del análisis.
 
+Para retomar la búsqueda de paper, leer primero la
+[nota de continuidad del debate](Methodological_Notes/debate_paper_2026-09-20.md):
+tasas y crédito fintech/bancario, lectura de Koont, sucursales, hipótesis abiertas
+y límites de identificación y datos. No hay todavía un diseño elegido.
+
 ## Datos que no están en el repositorio
 
 `Data/raw/` y `Data/processed/cendeu/` están fuera de control de versiones: pesan

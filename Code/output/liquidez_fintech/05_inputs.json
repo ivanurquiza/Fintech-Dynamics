@@ -1,0 +1,389 @@
+{
+  "files": [
+    {
+      "path": "Data/crosswalks/cendeu_lenders.csv",
+      "bytes": 62241,
+      "mtime_ns": 1789438239947497311
+    },
+    {
+      "path": "Data/processed/balances_bancos.dta",
+      "bytes": 20169328,
+      "mtime_ns": 1787176539688420172
+    },
+    {
+      "path": "Data/processed/cendeu/firm/part-00.parquet",
+      "bytes": 5264837,
+      "mtime_ns": 1788356925824953753
+    },
+    {
+      "path": "Data/processed/cendeu/firm/part-01.parquet",
+      "bytes": 5206331,
+      "mtime_ns": 1788356932448975733
+    },
+    {
+      "path": "Data/processed/cendeu/firm/part-02.parquet",
+      "bytes": 5140743,
+      "mtime_ns": 1788356937642772657
+    },
+    {
+      "path": "Data/processed/cendeu/firm/part-03.parquet",
+      "bytes": 5056421,
+      "mtime_ns": 1788356943720093227
+    },
+    {
+      "path": "Data/processed/cendeu/firm/part-04.parquet",
+      "bytes": 4983896,
+      "mtime_ns": 1788356949599752621
+    },
+    {
+      "path": "Data/processed/cendeu/firm/part-05.parquet",
+      "bytes": 4916063,
+      "mtime_ns": 1788356954573614327
+    },
+    {
+      "path": "Data/processed/cendeu/firm/part-06.parquet",
+      "bytes": 4854039,
+      "mtime_ns": 1788356959957339407
+    },
+    {
+      "path": "Data/processed/cendeu/firm/part-07.parquet",
+      "bytes": 4782905,
+      "mtime_ns": 1788356966206422703
+    },
+    {
+      "path": "Data/processed/cendeu/firm/part-08.parquet",
+      "bytes": 4635920,
+      "mtime_ns": 1788356971721851527
+    },
+    {
+      "path": "Data/processed/cendeu/firm/part-09.parquet",
+      "bytes": 4563062,
+      "mtime_ns": 1788356977220459887
+    },
+    {
+      "path": "Data/processed/cendeu/firm/part-10.parquet",
+      "bytes": 4454477,
+      "mtime_ns": 1788356982662055304
+    },
+    {
+      "path": "Data/processed/cendeu/firm/part-11.parquet",
+      "bytes": 4376829,
+      "mtime_ns": 1788356987771482370
+    },
+    {
+      "path": "Data/processed/cendeu/firm/part-12.parquet",
+      "bytes": 4285591,
+      "mtime_ns": 1788356996620630133
+    },
+    {
+      "path": "Data/processed/cendeu/firm/part-13.parquet",
+      "bytes": 4196007,
+      "mtime_ns": 1788357002597418699
+    },
+    {
+      "path": "Data/processed/cendeu/firm/part-14.parquet",
+      "bytes": 4090850,
+      "mtime_ns": 1788357009761522540
+    },
+    {
+      "path": "Data/processed/cendeu/firm/part-15.parquet",
+      "bytes": 3998768,
+      "mtime_ns": 1788357015047320926
+    },
+    {
+      "path": "Data/processed/cendeu/firm/part-16.parquet",
+      "bytes": 3890575,
+      "mtime_ns": 1788357020166534461
+    },
+    {
+      "path": "Data/processed/cendeu/firm/part-17.parquet",
+      "bytes": 3788911,
+      "mtime_ns": 1788357026377641350
+    },
+    {
+      "path": "Data/processed/cendeu/firm/part-18.parquet",
+      "bytes": 3671680,
+      "mtime_ns": 1788357032337264084
+    },
+    {
+      "path": "Data/processed/cendeu/firm/part-19.parquet",
+      "bytes": 3544966,
+      "mtime_ns": 1788357037499550817
+    },
+    {
+      "path": "Data/processed/cendeu/firm/part-20.parquet",
+      "bytes": 3394116,
+      "mtime_ns": 1788357042628581237
+    },
+    {
+      "path": "Data/processed/cendeu/firm/part-21.parquet",
+      "bytes": 3245919,
+      "mtime_ns": 1788357048487346808
+    },
+    {
+      "path": "Data/processed/cendeu/firm/part-22.parquet",
+      "bytes": 3084630,
+      "mtime_ns": 1788357053904802565
+    },
+    {
+      "path": "Data/processed/cendeu/firm/part-23.parquet",
+      "bytes": 2842998,
+      "mtime_ns": 1788357059355508011
+    },
+    {
+      "path": "Data/processed/cendeu/lender_month/part-00.parquet",
+      "bytes": 16636,
+      "mtime_ns": 1788356516464601327
+    },
+    {
+      "path": "Data/processed/cendeu/lender_month/part-01.parquet",
+      "bytes": 17818,
+      "mtime_ns": 1788356524516637049
+    },
+    {
+      "path": "Data/processed/cendeu/lender_month/part-02.parquet",
+      "bytes": 17704,
+      "mtime_ns": 1788356532379325377
+    },
+    {
+      "path": "Data/processed/cendeu/lender_month/part-03.parquet",
+      "bytes": 17523,
+      "mtime_ns": 1788356540572818773
+    },
+    {
+      "path": "Data/processed/cendeu/lender_month/part-04.parquet",
+      "bytes": 17195,
+      "mtime_ns": 1788356549514278074
+    },
+    {
+      "path": "Data/processed/cendeu/lender_month/part-05.parquet",
+      "bytes": 16901,
+      "mtime_ns": 1788356557195565115
+    },
+    {
+      "path": "Data/processed/cendeu/lender_month/part-06.parquet",
+      "bytes": 17017,
+      "mtime_ns": 1788356564415979568
+    },
+    {
+      "path": "Data/processed/cendeu/lender_month/part-07.parquet",
+      "bytes": 16722,
+      "mtime_ns": 1788356573737790970
+    },
+    {
+      "path": "Data/processed/cendeu/lender_month/part-08.parquet",
+      "bytes": 16443,
+      "mtime_ns": 1788356582190838484
+    },
+    {
+      "path": "Data/processed/cendeu/lender_month/part-09.parquet",
+      "bytes": 16256,
+      "mtime_ns": 1788356590287478883
+    },
+    {
+      "path": "Data/processed/cendeu/lender_month/part-10.parquet",
+      "bytes": 16055,
+      "mtime_ns": 1788356597663625449
+    },
+    {
+      "path": "Data/processed/cendeu/lender_month/part-11.parquet",
+      "bytes": 15873,
+      "mtime_ns": 1788356605261368545
+    },
+    {
+      "path": "Data/processed/cendeu/lender_month/part-12.parquet",
+      "bytes": 15729,
+      "mtime_ns": 1788356612706630029
+    },
+    {
+      "path": "Data/processed/cendeu/lender_month/part-13.parquet",
+      "bytes": 15344,
+      "mtime_ns": 1788356621754492788
+    },
+    {
+      "path": "Data/processed/cendeu/lender_month/part-14.parquet",
+      "bytes": 15393,
+      "mtime_ns": 1788356629519048562
+    },
+    {
+      "path": "Data/processed/cendeu/lender_month/part-15.parquet",
+      "bytes": 15021,
+      "mtime_ns": 1788356636936260411
+    },
+    {
+      "path": "Data/processed/cendeu/lender_month/part-16.parquet",
+      "bytes": 14907,
+      "mtime_ns": 1788356644552922802
+    },
+    {
+      "path": "Data/processed/cendeu/lender_month/part-17.parquet",
+      "bytes": 14776,
+      "mtime_ns": 1788356652146952593
+    },
+    {
+      "path": "Data/processed/cendeu/lender_month/part-18.parquet",
+      "bytes": 14637,
+      "mtime_ns": 1788356659448686334
+    },
+    {
+      "path": "Data/processed/cendeu/lender_month/part-19.parquet",
+      "bytes": 14444,
+      "mtime_ns": 1788356667007443665
+    },
+    {
+      "path": "Data/processed/cendeu/lender_month/part-20.parquet",
+      "bytes": 14341,
+      "mtime_ns": 1788356674471923268
+    },
+    {
+      "path": "Data/processed/cendeu/lender_month/part-21.parquet",
+      "bytes": 14244,
+      "mtime_ns": 1788356681589399603
+    },
+    {
+      "path": "Data/processed/cendeu/lender_month/part-22.parquet",
+      "bytes": 14148,
+      "mtime_ns": 1788356688561413947
+    },
+    {
+      "path": "Data/processed/cendeu/lender_month/part-23.parquet",
+      "bytes": 13768,
+      "mtime_ns": 1788356695301391053
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-00.parquet",
+      "bytes": 19388623,
+      "mtime_ns": 1788357067454215837
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-01.parquet",
+      "bytes": 19299452,
+      "mtime_ns": 1788357075848502034
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-02.parquet",
+      "bytes": 19094071,
+      "mtime_ns": 1788357083875125161
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-03.parquet",
+      "bytes": 18850793,
+      "mtime_ns": 1788357092333885659
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-04.parquet",
+      "bytes": 18609325,
+      "mtime_ns": 1788357100574063824
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-05.parquet",
+      "bytes": 18345199,
+      "mtime_ns": 1788357108783289120
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-06.parquet",
+      "bytes": 18155608,
+      "mtime_ns": 1788357117570033948
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-07.parquet",
+      "bytes": 17852770,
+      "mtime_ns": 1788357125454463170
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-08.parquet",
+      "bytes": 17569447,
+      "mtime_ns": 1788357133336633823
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-09.parquet",
+      "bytes": 17239980,
+      "mtime_ns": 1788357140827357861
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-10.parquet",
+      "bytes": 16858732,
+      "mtime_ns": 1788357148634481803
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-11.parquet",
+      "bytes": 16563832,
+      "mtime_ns": 1788357156873710242
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-12.parquet",
+      "bytes": 16259769,
+      "mtime_ns": 1788357164983355176
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-13.parquet",
+      "bytes": 15787479,
+      "mtime_ns": 1788357172966871689
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-14.parquet",
+      "bytes": 15352700,
+      "mtime_ns": 1788357181326319193
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-15.parquet",
+      "bytes": 14966131,
+      "mtime_ns": 1788357189908573595
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-16.parquet",
+      "bytes": 14573422,
+      "mtime_ns": 1788357197760430779
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-17.parquet",
+      "bytes": 14191938,
+      "mtime_ns": 1788357206212048826
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-18.parquet",
+      "bytes": 13820478,
+      "mtime_ns": 1788357214179952678
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-19.parquet",
+      "bytes": 13372684,
+      "mtime_ns": 1788357223941127476
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-20.parquet",
+      "bytes": 12874530,
+      "mtime_ns": 1788357233543603396
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-21.parquet",
+      "bytes": 12299726,
+      "mtime_ns": 1788357242871402436
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-22.parquet",
+      "bytes": 11606325,
+      "mtime_ns": 1788357252022187421
+    },
+    {
+      "path": "Data/processed/cendeu/person_lender_5pct/part-23.parquet",
+      "bytes": 10778666,
+      "mtime_ns": 1788357260599736603
+    },
+    {
+      "path": "Data/processed/ipc.dta",
+      "bytes": 9385,
+      "mtime_ns": 1787176514686083092
+    }
+  ],
+  "packages": {
+    "duckdb": "1.5.2",
+    "pandas": "3.0.0",
+    "numpy": "2.3.5",
+    "pyarrow": "23.0.0",
+    "matplotlib": "3.10.8",
+    "nbformat": "5.10.4",
+    "nbclient": "0.10.4"
+  },
+  "baseline": "2025-05-01"
+}
