@@ -421,3 +421,67 @@ cuatro provincias donde es agente financiero y no fuera de ellas; la prioridad c
 fuente de ingreso del deudor; y la recategorización obligatoria del corte de julio de 2026
 reproduce el orden. Varias de las pruebas de las secciones 3 y 4 de esta nota quedan
 respondidas ahí; las que no, están listadas en `resultados.md`.
+
+---
+
+## Comentario, 28 de septiembre de 2026: el mecanismo, en claro
+
+**El enunciado.** En crédito no garantizado a hogares, cobrar judicialmente cuesta más que
+la acreencia, así que la prelación contractual no existe en la práctica. La reemplaza una
+prelación de hecho: cobra primero el acreedor que está sentado sobre la cuenta donde entra
+el ingreso del deudor, porque puede debitar la cuota en el momento en que la plata se
+acredita, antes de que el deudor decida nada. Sueldo en Macro, haber jubilatorio en el banco
+pagador, código de descuento de la mutual, saldo de la billetera de Mercado Pago: es el mismo
+mecanismo con cuatro nombres. Lo que ordena el default no es banco contra fintech ni
+tecnología de originación. Es **quién controla el flujo**.
+
+**Una corrección a la §1.** La clasificación de esa tabla asigna la tecnología de cobro por
+acreedor ("banco: débito en cuenta, pero el deudor puede retirar antes"). Los resultados del
+23-sep muestran que eso está mal planteado: Macro es tan senior como una mutual en Salta,
+Jujuy, Misiones y Tucumán (0,21) y mucho menos fuera de ellas (0,62). El mismo banco es senior
+para un deudor y no para otro. El tratamiento vive en la **relación**, no en el acreedor:
+
+$$D_{ib} = \mathbb{1}\{b \text{ controla la cuenta donde } i \text{ cobra}\}$$
+
+Eso resuelve de paso el problema de la §3. Como $D_{ib}$ varía entre deudores dentro del
+mismo acreedor, se pueden meter a la vez efectos fijos deudor×mes y acreedor (o acreedor×mes):
+
+$$\text{Cae}_{ibt} = \alpha_{it} + \gamma_{b} + \beta\, D_{ib} + \Gamma X_{ibt} + \varepsilon_{ibt}$$
+
+$\alpha_{it}$ absorbe la capacidad de pago; $\gamma_b$ absorbe todo lo que es del acreedor
+(producto típico, política de cobranza, criterio de reporte, marca). $\beta$ sale de comparar,
+dentro de Macro, a sus deudores que cobran ahí con los que no. Es la especificación que hay
+que escribir en el paper. Las razones de chances por categoría quedan como hecho descriptivo.
+
+**Qué separa enforcement de información.** Las dos historias predicen el mismo ranking en el
+corte transversal. Se separan con cambios en dónde cobra el deudor **después** de haber
+tomado el crédito. La información se usa al originar; si la cuenta sueldo se mueve después,
+el tamizado ya está hecho y no cambia. El enforcement sí cambia, porque cambia quién puede
+debitar. Entonces la prueba es: relaciones originadas antes del cambio de cuenta, y cómo se
+mueve su prioridad después. La edad jubilatoria es el primer cambio de ese tipo que tenemos
+(`diag_edad_jubilatoria.py`, figura `10_edad_jubilatoria`): a los 60 las mujeres y a los 65 los
+varones pasan a cobrar en el banco pagador de ANSES, y la protección de MercadoLibre se
+debilita justo ahí, cinco años antes en mujeres que en varones. Falta restringir a relaciones
+previas a la edad legal, que es lo que convierte esa figura en el test de enforcement contra
+información. La saliencia de la app tampoco debería moverse con la jubilación, así que el
+mismo corte la descarta.
+
+**Qué separa débito de exclusión.** Para bancos y mutuales hay sólo débito. Para MercadoLibre
+hay débito y amenaza de cortar la plataforma. El débito requiere que haya saldo en la
+billetera; la exclusión no. Si la protección de MercadoLibre cae cuando el ingreso deja de
+entrar a la billetera (jubilados, asalariados sin actividad registrada), el que opera es el
+débito. Es lo que muestran los datos hasta ahora, pero sin separar por completo.
+
+**Lo que puede matarlo, en una línea cada uno.** La situación es única por deudor-entidad, así
+que un banco con varios productos cae más por construcción (el test es deudores con una sola
+línea por entidad). Un prestamista que refinancia en silencio mantiene al deudor en situación
+1, y eso es tolerancia, no prelación. La recategorización obligatoria no es una validación
+independiente: se dispara por la misma dispersión de situaciones que mide el panel.
+
+**Por qué importa fuera de Argentina.** Parlour, Rajan y Zhu dicen que competir por los flujos
+de pago le quita al banco información. Acá el flujo le da al que lo controla algo más barato
+que la información: le da prelación. Si eso es cierto, cada vez que un regulador decide dónde
+se acredita un sueldo o un haber, o si una billetera puede recibirlo, está reasignando
+prelación entre acreedores sin decirlo. Y el crecimiento de un prestamista senior de hecho
+diluye a los demás (§8.2), lo que puede hacer subir la mora medida de bancos y retail sin que
+el hogar esté peor.
