@@ -1,10 +1,8 @@
 # Fintech-Dynamics
 
-Proyecto de investigación sobre la interacción entre medios de pago digitales, fondos comunes de inversión money market, crédito no bancario y fondeo de los bancos en Argentina. Universidad de San Andrés.
+Proyecto de investigación in progress. Interacción entre medios de pago digitales, fondos comunes de inversión money market, crédito no bancario y fondeo de los bancos en Argentina.
 
 ## Horizonte del estudio
-
-Desde 2020 el ahorro transaccional de los hogares argentinos se desplazó en buena medida hacia billeteras digitales cuyos saldos se invierten en fondos money market, y esos fondos colocan a su vez en cuentas a la vista, plazos fijos y cauciones. En paralelo, el BCRA cambió varias veces el tratamiento de esos pasivos (encajes sobre la vista de los fondos y sobre las cuentas de los proveedores de pago, interoperabilidad, salida de la LEFI) y los proveedores no financieros pasaron a ser una parte relevante del crédito a personas. El proyecto estudia cómo esos cambios se transmiten a la composición y al costo del fondeo bancario, a la asignación de cartera de los fondos y a la oferta y el repago del crédito, con datos administrativos a nivel de banco, fondo y deudor.
 
 Hoy hay tres líneas de trabajo, con notas propias en `Methodological_Notes/`:
 
@@ -12,7 +10,7 @@ Hoy hay tres líneas de trabajo, con notas propias en `Methodological_Notes/`:
 |---|---|---|---|
 | A | Fondos money market, encajes y fondeo bancario | FondosCNV, balances, normativa | Base completa; descriptivos |
 | B | Liquidez bancaria de 2025 y sustitución por crédito fintech | CENDEU, balances | Descriptivos; diseño abierto |
-| C | Orden de repago entre acreedores del mismo deudor | CENDEU (muestra 5%), padrón | Primera estimación y diagnósticos |
+| C | Orden de repago entre acreedores del mismo deudor | CENDEU (muestra 5%), padrón | Primera estimación y diagnósticos (pensado como posible tesis)|
 
 ## Estructura
 
