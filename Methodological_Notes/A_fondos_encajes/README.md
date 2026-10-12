@@ -35,4 +35,4 @@ Dos cosas a tener presentes, de `comun/revision_integral_2026-09-28.md` §4. Un 
 
 ## Pendiente
 
-Crosswalk de contrapartes de plazo fijo a código BCRA (habilita el panel fondo × banco); reglamentos de gestión para tipificar clases; 24 carteras cortadas; pedido a la CNV (`pedido_cnv_fci.md`). Notas: `fuentes_fci.md`, `pedido_cnv_fci.md`.
+Crosswalk de contrapartes de plazo fijo a código BCRA (habilita el panel fondo × banco); reglamentos de gestión para tipificar clases; 24 carteras cortadas. Notas: `integracion_psp_money_market.md` (propuesta: billeteras, integración vertical y costo de fondeo de los money market), `fuentes_fci.md`, `pedido_cnv_fci.md`.
