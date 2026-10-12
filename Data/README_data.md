@@ -12,7 +12,7 @@ Data/
 └── docs/         documentación de las bases, en PDF
 ```
 
-`raw/` y `processed/cendeu/` están fuera de control de versiones: pesan unos 11 GB y la
+`raw/`, `processed/cendeu/` y todos los `.parquet` están fuera de control de versiones: pesan unos 14 GB y la
 Central de Deudores contiene microdato identificado sujeto a la declaración jurada de la
 Ley 25.326.
 
@@ -27,10 +27,12 @@ Ley 25.326.
 | `raw/bcra_inclusion/puntos_acceso/` | BCRA, Informe de Inclusión Financiera | Puntos de acceso por entidad, tipo y **localidad**, mensual desde 2019 | descarga manual desde `bcra.gob.ar/indicadores-inclusion-financiera/` |
 | `raw/bcra_balhist/` | BCRA, balances históricos | `balhist.txt`, partidas contables por entidad y mes | descarga manual |
 | `raw/bcra_cendeu/` | BCRA, Central de Deudores | Archivos `.7z` del mes corriente y del panel de 24 meses | Clave Fiscal de ARCA, servicio *BCRA – Cheques y Deudores* |
-| `raw/cafci/` | CAFCI | Resúmenes mensuales de la industria de fondos, maestro de fondos y cuentas | `descargar_cafci.py` |
+| `raw/cafci/` | CAFCI | Resúmenes mensuales de la industria de fondos y maestro de fondos y clases. La API de series por clase está fuera de servicio desde ago-2026 | `descargar_cafci.py`, `extraer_cafci_agregados.py` |
+| `raw/FondosCNV/planillas/` | CNV, planilla diaria de valores de cuotaparte (provista por CAFCI) | Un xlsx por día hábil, todas las clases de todos los FCI, 2-ene-2020 a 25-sep-2026 (1.634 días) | `Code/build/FondosCNV/01_planillas_diarias.ipynb` |
+| `raw/FondosCNV/carteras/` | CNV, ficha de cada fondo | Cartera semanal de los 82 fondos money market, un html por fondo y viernes (19.209), desde nov-2019 | `Code/build/FondosCNV/02_carteras_semanales.ipynb` |
 | `raw/psp/` | BCRA | Registro de proveedores de servicios de pago | `descargar_registro_psp.py` |
 | `raw/ipc/` | INDEC | `sh_ipc.xls`, índice de precios nacional y regional | descarga manual |
-| `raw/geo/` | — | `ar_provincias.geojson`, contornos provinciales para los mapas | — |
+| `raw/geo/` | Natural Earth | `ar_provincias.geojson`, contornos provinciales para los mapas | descarga manual |
 
 ## Bases construidas
 
@@ -45,10 +47,28 @@ Ley 25.326.
 | `processed/pda_provincia.dta` | provincia × mes | 2.016 | 15 |
 | `processed/pda_localidad.parquet` | localidad × tipo × mes | 368.939 | 11 |
 | `processed/pda_lender_depto.dta` | entidad × departamento × tipo × mes | 594.214 | 8 |
-| `processed/cendeu/` | ver `docs/cendeu_bases.pdf` | — | — |
+| `processed/cendeu/` | nueve bases de la Central de Deudores, ver `docs/diccionario_cendeu.md` | | |
+| `processed/FondosCNV/panel_fondo_semana.dta` | fondo money market × semana | 17.893 | 38 |
+| `processed/FondosCNV/*.parquet` | clase × día, fondo × día, carteras; ver `docs/diccionario_fondoscnv.md` | | |
 
-Los puntos de acceso están documentados en `docs/pda_bases.pdf`, con el control de
-consistencia contra el archivo por provincia que publica el BCRA.
+El diccionario completo de cada `.dta` (variable, tipo, cobertura y etiqueta) está en
+`docs/diccionario_bases.md`, generado desde los archivos por
+`Code/build/documentar_bases.py`. Los puntos de acceso tienen además
+`docs/pda_bases.pdf`, con el control de consistencia contra el archivo por provincia que
+publica el BCRA.
+
+### Documentación en `docs/`
+
+| Archivo | Contenido |
+|---|---|
+| `diccionario_bases.md` | Diccionario generado de los `.dta` de `processed/` |
+| `catalogo_caracteristicas.csv` | Códigos de `caracteristicas_bancos.dta` por fuente, con descripción y cobertura |
+| `diccionario_cendeu.md` | Las nueve bases de la Central de Deudores, variable por variable |
+| `diccionario_fondoscnv.md` | Fuentes, construcción y variables de las bases de fondos |
+| `bcra_inclusion_diccionario.md` | Series del Informe de Inclusión Financiera |
+| `nota_lefi_leliq.md` | Cuentas de LEFI, LELIQ y pases en el balance, y por qué no reconcilian con la serie del BCRA |
+| `notas_revision_datos.md` | Chequeos pendientes y problemas ya corregidos |
+| `bases_proyecto.pdf`, `cendeu_bases.pdf`, `pda_bases.pdf` | Versiones en PDF para circular |
 
 Las versiones monetarias con sufijo `_r` de `balances_bancos` y
 `prestamos_depositos_prov` están a precios de enero de 2026, deflactadas con el
@@ -61,6 +81,8 @@ IPC nacional; las columnas originales conservan los valores nominales.
 | `crosswalks/psp_fci_map.csv` | Billetera → entidad legal, fondo, clase de cuotaparte, gerente, depositaria y su código de entidad BCRA |
 | `crosswalks/cendeu_lenders.csv` | 577 acreedores de la Central de Deudores: código, nombre, clase regulatoria derivada del rango del código, taxonomía propia y si tiene balance publicado |
 | `crosswalks/provincias_arca_indec.csv` | Código provincial de ARCA ↔ código provincial del INDEC. Une el padrón de deudores con los puntos de acceso |
+| `crosswalks/fondos_cnv_lfc.csv` | Código CNV del fondo (planilla) ↔ id de la ficha CNV (`lfc`), 82 fondos money market, revisado a mano |
+| `crosswalks/fondos_cnv_lista.csv` | Los 1.702 fondos del selector de la CNV con su `lfc` |
 
 ---
 
@@ -105,7 +127,22 @@ python3 Code/build/cendeu_reshape.py sample
 python3 Code/build/cendeu_reshape.py person_month
 ```
 
-Los `.txt` intermedios pesan hasta 22 GB y se borran después de convertir. Los `.7z`
+**4. Fondos (FondosCNV).** Desde `Code/build/FondosCNV/`, en orden, con la revisión manual
+del crosswalk entre el 02 y el 03:
+
+```
+01_planillas_diarias.ipynb
+02_carteras_semanales.ipynb
+03_paneles_y_merge.ipynb
+```
+
+**5. Documentación.** Después de rearmar cualquier `.dta`:
+
+```
+python3 Code/build/documentar_bases.py
+```
+
+Los `.txt` intermedios de la Central pesan hasta 22 GB y se borran después de convertir. Los `.7z`
 originales conviene guardarlos: el BCRA publica sólo el mes corriente, así que un mes
 que no se baja se pierde.
 
@@ -114,10 +151,12 @@ que no se baja se pierde.
 `ent` es el código de entidad del BCRA y une la Central de Deudores con los balances y
 con el mapa de billeteras. `cuit` une entre sí a los archivos de la Central y con el
 padrón de ARCA. En los `.dta`, `ym` es el índice mensual de Stata, meses desde
-enero de 1960 (pandas lo convierte a fecha cuando tiene formato Stata `%tm`).
+enero de 1960 (pandas lo convierte a fecha cuando tiene formato Stata `%tm`; en las bases de
+puntos de acceso está guardado como entero sin formato).
 En los parquet derivados de CENDEU, `ym = year * 12 + month - 1`:
 para pasarlo a índice Stata se resta `1960 * 12 = 23520`. No unir por el entero
-`ym` sin armonizar estas convenciones.
+`ym` sin armonizar estas convenciones. En fondos la llave es `cod_cnv` (fondo) y
+`cod_cafci` (clase), y el tiempo es `fecha` o `semana` (viernes de cierre).
 
 Los puntos de acceso se unen a la Central de Deudores **por provincia**: el padrón trae el
 código provincial de ARCA y `provincias_arca_indec.csv` lo lleva al código del INDEC que usa

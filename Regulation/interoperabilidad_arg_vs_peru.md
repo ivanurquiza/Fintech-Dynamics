@@ -13,9 +13,9 @@ el comercio** y, después, **el fondeo de la billetera desde la cuenta bancaria*
 
 Términos correctos del BCRA, para usar en el paper:
 
-- **Pago con transferencia (PCT)** — el instrumento creado por Transferencias 3.0.
-- **Interfaz Estandarizada de Pagos (IEP)** — la capa técnica de mensajería común.
-- **Interoperabilidad de códigos QR** — el mandato propiamente dicho.
+- **Pago con transferencia (PCT)**, el instrumento creado por Transferencias 3.0.
+- **Interfaz Estandarizada de Pagos (IEP)**, la capa técnica de mensajería común.
+- **Interoperabilidad de códigos QR**, el mandato propiamente dicho.
 - Roles del esquema: **PSPCP** (cuentas de pago), **PSI** (iniciación), **aceptador**
   (adhiere comercios), **agregador/subadquirente**, **administrador de esquema**.
 
@@ -24,16 +24,16 @@ Términos correctos del BCRA, para usar en el paper:
 
 ---
 
-## Reforma 0 — Los rieles (2016-2019)
+## Reforma 0. Los rieles (2016-2019)
 
 Sin esto no se entiende el resto.
 
 | Norma | Emisión | Aplicación | Qué involucró |
 |---|---|---|---|
-| A 6044 | 22/08/2016 | — | Crea el **alias-CBU**. Solo cuentas bancarias. |
+| A 6044 | 22/08/2016 | | Crea el **alias-CBU**. Solo cuentas bancarias. |
 | A 6099 | 14/11/2016 | 15/11/2016 | Crea el **DEBIN**: riel de débito (*pull*), alguien pide plata y el titular autoriza. |
 | **A 6510** | **15/05/2018** | **+120 días ≈ sep-2018** | Crea la **CVU**, la "cuenta bancaria" de una billetera. Los bancos quedan obligados a procesar transferencias contra CVU. Cada CVU tiene alias, en el **mismo espacio de nombres** que el CBU. |
-| CIMPRA 518 | 17/07/2018 | — | Define la operatoria: CVU→CBU, CBU→CVU y CVU→CVU, inmediatas, y **no rechazables**. |
+| CIMPRA 518 | 17/07/2018 | | Define la operatoria: CVU→CBU, CBU→CVU y CVU→CVU, inmediatas, y **no rechazables**. |
 | **A 6697** | **05/06/2019** | **30/06/2019** | Una transferencia con CVU debe cursarse **"en idénticas condiciones"** que una con CBU, en todos los canales, incluido mobile. |
 
 **Resultado:** transferir entre una billetera y un banco, o entre dos billeteras, quedó
@@ -49,7 +49,7 @@ cross-bank en enforcement.
 
 ---
 
-## Reforma 1 — Transferencias 3.0: nace el pago con transferencia (2020-2021)
+## Reforma 1. Transferencias 3.0: nace el pago con transferencia (2020-2021)
 
 | Norma | Emisión | Aplicación | Qué involucró |
 |---|---|---|---|
@@ -78,7 +78,7 @@ siguió cerrado dos años y medio más.
 
 ---
 
-## Reforma 2 — El QR con tarjeta de crédito (2023-2025)
+## Reforma 2. El QR con tarjeta de crédito (2023-2025)
 
 | Norma | Emisión | Aplicación | Qué involucró |
 |---|---|---|---|
@@ -89,13 +89,13 @@ siguió cerrado dos años y medio más.
 | A 8114 | 08/10/2024 | 09/10/2024 | Consolida lo anterior en el texto ordenado. |
 
 **Dos detalles prácticos:** el BCRA fecha el arranque el 30/04/2024, pero la prensa reportó
-operatoria efectiva recién el 03/06/2024 — cinco semanas de brecha entre vigencia y
+operatoria efectiva recién el 03/06/2024, cinco semanas de brecha entre vigencia y
 funcionamiento. Y en noviembre de 2024 Mercado Pago bloqueó los pagos QR con Visa desde
 MODO. La interoperabilidad de derecho no fue instantánea de hecho.
 
 ---
 
-## Reforma 3 — El fondeo de la billetera (2022-2024)
+## Reforma 3. El fondeo de la billetera (2022-2024)
 
 La menos contada, y la que toca más directamente al banco.
 
@@ -114,7 +114,7 @@ banco-billetera sobre el depósito minorista.
 
 ---
 
-## Reforma 4 — Precios y afinado (2024-2026)
+## Reforma 4. Precios y afinado (2024-2026)
 
 | Norma | Emisión | Aplicación | Qué involucró |
 |---|---|---|---|
@@ -132,7 +132,7 @@ Burga, Céspedes, Parra, Cerón & Quispe (2025), IDB-WP-1767.
 El paper describe un sistema **fragmentado en dos billeteras dominantes y no
 interoperables**: **Yape**, de BCP (el banco más grande), lanzada en 2016; y **Plin**,
 consorcio defensivo de Interbank, BBVA y Scotiabank, lanzado en 2020. Textual: *"both
-maintained a closed network"* — no se podía mandar plata de una a la otra. Yape era ~6×
+maintained a closed network"*, no se podía mandar plata de una a la otra. Yape era ~6×
 más grande en cantidad de operaciones.
 
 La norma es la **Circular 0024-2022-BCRP, del 06/10/2022**:
@@ -149,10 +149,10 @@ implementación plena en enero de 2024. La disponibilidad general para usuarios 
 alrededor del 10/05/2023.
 
 **Dos cosas que el paper no dice:** que Perú ya tenía transferencias interbancarias
-inmediatas desde 2016 (24×7 desde dic-2020) sobre la Cámara de Compensación Electrónica —
+inmediatas desde 2016 (24×7 desde dic-2020) sobre la Cámara de Compensación Electrónica,
 o sea que los rieles existían y lo que faltaba era interconectar dos capas propietarias por
-encima. Y que la Fase 2 (13/09/2023), que incorpora a las cajas municipales — justamente
-las prestamistas de microcrédito —, cae dentro de su ventana post-tratamiento, pero tratan
+encima. Y que la Fase 2 (13/09/2023), que incorpora a las cajas municipales, justamente
+las prestamistas de microcrédito, cae dentro de su ventana post-tratamiento, pero tratan
 todo como un evento único.
 
 ### Diseño y resultados
@@ -236,7 +236,7 @@ tradicional por el lado del fondeo y del crédito**, que ellos no tocan:
 - Todos los tramos argentinos son **nacionales y simultáneos**. La identificación tiene que
   venir de exposición predeterminada, no de la fecha.
 - **Colisión de fechas:** abril-mayo 2024 tiene a la vez el QR-tarjeta (30/04), el fin del
-  DEBIN recurrente (30/04), la A 7996 y la A 8030/8032 — y el primer encaje a los FCI
+  DEBIN recurrente (30/04), la A 7996 y la A 8030/8032, y el primer encaje a los FCI
   (A 7988, 15/04). Ese mes es inutilizable para separar mecanismos.
 - El BCRA **dejó de publicar la desagregación intra vs. interoperable** en 2024-2025. Sin
   esa serie no se mide el efecto del segundo shock. Incluirlo en el pedido de datos.
@@ -245,5 +245,5 @@ tradicional por el lado del fondeo y del crédito**, que ellos no tocan:
   se publica); umbrales de 100.000 y 500.000 UVA de la tasa de intercambio (RD a nivel
   comercio); A 8162 desde ago-2025 (dispersión de aranceles).
 - Antecedente de competencia útil: caso **Prisma** (CNDC, compromiso de desinversión 2017,
-  multiadquirencia enero 2019) y las denuncias cruzadas de 2024 — MODO contra Mercado Libre
+  multiadquirencia enero 2019) y las denuncias cruzadas de 2024, MODO contra Mercado Libre
   (may-2024) y Mercado Libre contra 36 bancos por cartelización (ago-2024).

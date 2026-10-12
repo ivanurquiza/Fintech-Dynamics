@@ -1,6 +1,6 @@
 # Orden de repago dentro del deudor
 
-Exploración de la idea de `Methodological_Notes/pecking_order.md` con la muestra de
+Exploración de la idea de `Methodological_Notes/C_orden_repago/pecking_order.md` con la muestra de
 personas de CENDEU. Un notebook, un módulo de funciones y una nota de resultados.
 
 - `01_orden_de_repago.ipynb`: el análisis completo, ejecutado. Diez secciones, de la

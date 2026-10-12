@@ -91,7 +91,7 @@ acreedor, y $\alpha_{it}$ efectos fijos deudor×mes.
 versión anterior escribía $\gamma_b + \beta\,\text{Riel}_b$, lo cual es
 inconsistente: $\text{Riel}_b$ es función de $b$ y queda absorbido por el efecto
 fijo de acreedor. La observación es correcta y viene de la actualización de
-`debate_paper_2026-09-20.md`. Lo que la tabla preliminar de §1 computa en los
+`../archivo/debate_paper_2026-09-20.md`. Lo que la tabla preliminar de §1 computa en los
 hechos es la media desmeanada dentro de deudor×mes por **grupo** de acreedor, sin
 efectos fijos de entidad, que es lo que la ecuación de arriba representa. Si se
 quisieran incluir efectos fijos de entidad habría que interactuar el riel con algo

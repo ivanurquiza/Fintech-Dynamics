@@ -1,4 +1,4 @@
-# Datos de Inclusión Financiera — BCRA
+# Datos de Inclusión Financiera. BCRA
 
 **Fuente:** [Indicadores de inclusión financiera, BCRA](https://www.bcra.gob.ar/indicadores-inclusion-financiera/)
 **Descarga reproducible:** `python descargar_datos_bcra.py`
@@ -17,7 +17,7 @@ tx_provincia (24 jurisdicciones + TOTAL), nu_valor (%). Mensual, 2017m1–2025m1
 
 ## 2. BCRA_deudores_SFA_por_grupo_institucional_y_provincia.txt (~1,4 MB, 18.900 filas)
 Ídem 1 pero desagregado por grupo institucional del acreedor: Bancos Privados; Bancos Públicos;
-Compañías Financieras; EEFF (total reguladas); OPNFC (Otros Proveedores No Financieros de Crédito —
+Compañías Financieras; EEFF (total reguladas); OPNFC (Otros Proveedores No Financieros de Crédito,
 acá caen los PSP/fintech que dan crédito, p. ej. Mercado Pago); PNFC; TCNB (tarjetas no bancarias).
 Mensual, 2017m1–2025m12. Los grupos NO son excluyentes a nivel persona → no sumar % entre grupos.
 

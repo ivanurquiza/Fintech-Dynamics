@@ -1,8 +1,8 @@
 # Literatura: guía de lectura para Fintech-Dynamics
 
-Revisión del corpus local: 13 de septiembre de 2026.
+Revisión del corpus local: 13 de septiembre de 2026. Secciones 17 a 19 agregadas el 12 de octubre de 2026.
 
-Esta nota resume los 16 PDF guardados en esta carpeta. Se revisaron planteos,
+Esta nota resume los 19 PDF guardados en esta carpeta. Se revisaron planteos,
 métodos, resultados y limitaciones de los textos principales; no se replicaron
 estimaciones ni se verificaron todas las demostraciones y apéndices. Las referencias
 corresponden a las versiones locales, que pueden diferir de versiones posteriores.
@@ -21,6 +21,8 @@ al contador del PDF cuando se indica «PDF».
 | ¿Pagos e información afectan el crédito? | Parlour–Rajan–Zhu | Información transaccional frente al canal de fondeo |
 | ¿Cómo estudiar interoperabilidad? | Casiano; Anchorena | Uso de pagos, inclusión y resultados bancarios |
 | ¿Cuándo es válido un instrumento de exposición? | Borusyak–Hull–Jaravel | Exogeneidad de shocks o participaciones e inferencia |
+| ¿Importa el shock de crédito para la actividad? | Greenstone–Mas–Nguyen | Caída de crédito frente a efecto real |
+| ¿Cómo transmiten la política monetaria la liquidez bancaria y los no bancos? | Bianchi–Bigio; Franco | Riesgo de liquidez del banco y canal no bancario |
 
 ## 1. Khwaja y Mian (2008)
 
@@ -354,6 +356,36 @@ por qué los niveles agregados son insuficientes, pero necesita evidencia propia
 El shock nacional y la exposición deben distinguirse de reformas y cambios
 macroeconómicos concurrentes. Ver PDF 7–10, cuadros 1–2.
 
+## 17. Greenstone, Mas y Nguyen (2020)
+
+**Do Credit Market Shocks Affect the Real Economy? Quasi-experimental Evidence from the Great Recession and "Normal" Economic Times.** AEJ: Economic Policy 12(1), 200–225. [PDF](greenstone2020.pdf).
+
+**Pregunta y diseño.** Mide si los shocks al crédito para pequeñas empresas afectan el empleo. Predice shocks de crédito por condado con un diseño shift-share: participaciones de mercado previas de cada banco en el condado por los desplazamientos de oferta del banco a nivel nacional. Datos de préstamos a pequeñas empresas (CRA) y de establecimientos, 1997–2010.
+
+**Resultados.** Los condados con shocks negativos previstos tienen menos originaciones a pequeñas empresas, lo que indica que cambiar de prestamista es costoso. El efecto sobre el empleo de las pequeñas empresas y sobre el empleo total es económicamente chico y en general no significativo, tanto en la Gran Recesión como en tiempos normales.
+
+**Aplicación y límites.** El nulo real se explica con que las firmas tienen otras fuentes de crédito, pero no lo miden. CENDEU permite observar esas otras fuentes en el mismo deudor. Es además un antecedente directo del shift-share de oferta bancaria y de sus problemas de inferencia (ver Borusyak–Hull–Jaravel).
+
+## 18. Franco (2024)
+
+**The Fintech Lending Channel of Monetary Policy.** Documento de trabajo, versión de septiembre de 2024. [PDF](Franco_paper.pdf).
+
+**Pregunta y diseño.** Compara la transmisión de la política monetaria a hipotecas originadas por prestamistas fintech no bancarios y por el resto. Usa unos 2,5 millones de hipotecas a tasa fija de la FHA entre 2012 y 2019, con 230 bancos y 188 no bancos, de los cuales 9 son fintech, más datos de balance y fondeo de los no bancos obtenidos por pedidos a reguladores estatales.
+
+**Resultados.** Los prestamistas fintech aceleran el traspaso de la tasa de política a la tasa hipotecaria y atenúan el traspaso a los volúmenes.
+
+**Aplicación y límites.** Es un antecedente sobre no bancos y transmisión monetaria, no sobre pagos ni depósitos. Con nueve prestamistas fintech la variación efectiva es chica y los errores estándar no se agrupan por prestamista: no usarlo como evidencia para nuestras preguntas más allá del antecedente.
+
+## 19. Bianchi y Bigio (2022)
+
+**Banks, Liquidity Management, and Monetary Policy.** Econometrica 90(1), 391–454. [PDF](bianchi-bigio2022.pdf) (versión de marzo de 2021).
+
+**Pregunta y diseño.** Modelo de gestión de liquidez bancaria con mercado interbancario OTC. Los depósitos circulan entre bancos y se liquidan con reservas; la política monetaria cambia el costo de quedar corto de reservas y, con eso, el trade-off entre prestar y asumir riesgo de liquidez.
+
+**Resultados.** La implementación de la política (tasas de ventanilla y de remuneración de reservas, fricciones interbancarias) afecta el traspaso a tasas activas. Una descomposición cuantitativa atribuye parte de la caída del crédito en 2008 a shocks de liquidez y a la disfunción del interbancario.
+
+**Aplicación y límites.** Es el marco para la línea de liquidez: los encajes sobre la vista de FCI y la salida de la LEFI son cambios en el costo de la liquidez del banco. Deja un punto que conviene resolver en el papel: el depósito del PSP con encaje 100% queda esterilizado y no circula por el interbancario.
+
 ## Implicaciones para la siguiente etapa
 
 1. **Separar las dos preguntas causales.** El efecto en una relación bancaria y
@@ -377,6 +409,6 @@ macroeconómicos concurrentes. Ver PDF 7–10, cuadros 1–2.
    mercado. Las notas de estado del proyecto detallan problemas concretos de código.
 
 Las notas metodológicas citan además a Xiao, Drechsler–Savov–Schnabl,
-Chernenko–Sunderam, Ivashina–Scharfstein–Stein, Greenstone–Mas–Nguyen y otros.
+Chernenko–Sunderam, Ivashina–Scharfstein–Stein y otros.
 Esta revisión no afirma haber leído esos trabajos completos: sus PDF no están
 en esta carpeta.

@@ -67,7 +67,7 @@ Riesgos: composición de depósitos vinculada a clientela, política que respond
 
 Interpretación posible: efecto de una restricción regulatoria de liquidez sobre crédito y sustitución. **No usar encajes como IV de una tasa y afirmar una elasticidad pura a tasas:** los encajes pueden afectar cantidades directamente.
 
-## Ruta C: retiro del seguro de liquidez sobre bonos — candidata más distintiva
+## Ruta C: retiro del seguro de liquidez sobre bonos. candidata más distintiva
 
 El 10 de junio de 2025 se rescindió el saldo restante de opciones de liquidez del BCRA sobre títulos públicos. La cancelación mayoritaria de julio 2024 cae antes de nuestra ventana CENDEU, pero el saldo remanente de 2025 cae dentro.
 
@@ -83,7 +83,7 @@ Una extensión, solo si aparecen contratos suficientes, sería explotar vencimie
 
 1. **Oferta:** banco expuesto ajusta crédito para deudores comparables; balances muestran si hubo presión de liquidez, fondeo o cartera. Usar regulados digitales como contraste de mecanismo cuando la muestra lo permita, sin equiparar licencia con tecnología.
 2. **Reemplazo:** para clientes previos, medir por separado saldo con bancos expuestos, con otros bancos y con PNFC fintech. Medir cantidades reales y relación nueva/continuada. No basta una participación fintech mayor por caída del denominador.
-3. **Continuidad:** saldo total, conservación de alguna relación y situación posterior. Medir respuesta fintech y bancaria en la misma escala —por ejemplo, variación sobre deuda inicial— para cuantificar compensación. Si se usa cociente de formas reducidas, reportar incertidumbre y no confundirlo con sustitución estructural universal.
+3. **Continuidad:** saldo total, conservación de alguna relación y situación posterior. Medir respuesta fintech y bancaria en la misma escala , por ejemplo, variación sobre deuda inicial,  para cuantificar compensación. Si se usa cociente de formas reducidas, reportar incertidumbre y no confundirlo con sustitución estructural universal.
 4. **Fracción geográfica:** sucursales previas de **otros bancos** y diversidad de alternativas, distinguiendo al incumbente. Controlar shocks locales. Si fintech reemplaza más donde faltan otras entidades, es evidencia coherente con costos de acceso/switching; no prueba sola el mecanismo digital. Una sucursal contemporánea puede ser respuesta al mismo shock.
 5. **Relación fintech previa:** permite probar si una relación ya establecida facilita ajuste rápido. Su interacción con el shock identifica heterogeneidad bajo supuestos, no el efecto causal de adoptar fintech. Para ese último objeto haría falta otra fuente de asignación a acceso/eligibilidad.
 
@@ -91,7 +91,7 @@ Una fintech puede sustituir, complementar o amplificar la restricción si depend
 
 ## Orden de trabajo y criterios para abandonar una ruta
 
-Primero corregir taxonomía, comprobar red multibanco y rehacer shocks. En paralelo de investigación —sin asumir una estimación ya implementada— inventariar puts en estados previos de varios bancos y completar reglas de encajes. Elegir un anclaje institucional si ofrece cobertura y una justificación defendible; no acumular instrumentos débiles para obtener significancia. Si el ajuste bancario no predice crédito de la población objetivo, descartar la extrapolación firmas→personas. Si la aparente respuesta fintech desaparece al medir montos absolutos, no vender sustitución.
+Primero corregir taxonomía, comprobar red multibanco y rehacer shocks. En paralelo de investigación , sin asumir una estimación ya implementada,  inventariar puts en estados previos de varios bancos y completar reglas de encajes. Elegir un anclaje institucional si ofrece cobertura y una justificación defendible; no acumular instrumentos débiles para obtener significancia. Si el ajuste bancario no predice crédito de la población objetivo, descartar la extrapolación firmas→personas. Si la aparente respuesta fintech desaparece al medir montos absolutos, no vender sustitución.
 
 Las tasas pueden explicar cuándo se manifiesta la vulnerabilidad bancaria, pero para llamar al paper transmisión causal de política monetaria necesitamos aislar innovaciones de política frente a inflación, expectativas y demanda. Hasta entonces, el título honesto es shocks de oferta bancaria y sustitución fintech.
 

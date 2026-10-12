@@ -12,7 +12,7 @@ que determina si hay o no desintermediación.
 
 | Dónde está el peso | Norma | Efectivo mínimo | ¿Es fondeo prestable? |
 |---|---|---|---|
-| Caja de ahorro minorista en un banco | — | ~45% con integración | Sí, barato (tasa ~0) |
+| Caja de ahorro minorista en un banco | | ~45% con integración | Sí, barato (tasa ~0) |
 | Cuenta de pago del PSP, no invertida | t.o. PSP 4.1.2: 100% depositado a la vista en EEFF del país | **100%** desde 1-ene-2022 (A 7429, punto 1.3.14) | **No.** Esterilizado |
 | Invertido en FCI money market | t.o. PSP 4.1.2 (habilitado por A 7495, abr-2022) | 0% → 40% (ver cronología) | Sí, pero caro y crecientemente encajado |
 
@@ -153,7 +153,7 @@ Extraje las partidas nuevas de `baldet` para los 100 meses disponibles
 Como porcentaje de los depósitos del SPNF en pesos: 1,6% en 2018m1, 9,7% en
 2021m1, **28,5% en 2024m1**, 11,5% en 2026m4. El pico y la reversión coinciden
 con el ciclo de tasas y con la escalera de encajes de 2024–2025, no con la
-adopción de billeteras — advertencia importante para no confundir mecanismos.
+adopción de billeteras, advertencia importante para no confundir mecanismos.
 
 **La dispersión cross-section es enorme y no es ruido.** Exposición promedio
 2021 (pre-boom), como % de depósitos SPNF, entre los 37 bancos de mayor escala:
@@ -175,7 +175,7 @@ Los de arriba son exactamente los bancos ligados a la industria de fondos:
 Valores es depositaria de Delta, SBS y Southern Trust; BIND es la depositaria de
 Mercado Fondo; Comafi la de Cocos. Los de abajo son bancos provinciales de
 depósito minorista puro. **Eso es una discontinuidad de modelo de negocio, no
-una variable continua de exposición** — y por lo tanto no es exógena. Cualquier
+una variable continua de exposición**, y por lo tanto no es exógena. Cualquier
 diseño que use esta exposición como tratamiento está comparando bancos
 mayoristas contra bancos minoristas, no billeteras contra no-billeteras.
 
@@ -200,8 +200,8 @@ publicable por sí mismo, pero no identifica nada todavía.
 Las billeteras no destruyen depósitos: **convierten depósitos minoristas
 inelásticos en fondeo mayorista elástico, sin que el depositante haga nada.** El
 barrido automático a money market es una tecnología que sube la beta de depósito
-del sistema. Es Xiao (2020, QJE) — flujo de bancos a shadow banks cuando suben
-las tasas — pero con la fricción de atención eliminada por software, y en un
+del sistema. Es Xiao (2020, QJE), flujo de bancos a shadow banks cuando suben
+las tasas, pero con la fricción de atención eliminada por software, y en un
 país donde la tasa real relevante cambia de mes a mes.
 
 Predicciones que se siguen y son testeables con lo que hay:
@@ -226,7 +226,7 @@ fondo f, con **efectos fijos banco × t**. Los FE de banco×t absorben toda la
 demanda de fondeo del banco; lo que queda identificado es la oferta del fondo.
 Segunda etapa: agregar el shock estimado a nivel banco y llevarlo al crédito.
 Es literalmente Khwaja-Mian con fondos en lugar de bancos y bancos en lugar de
-empresas. Requiere que un banco se fondee con varios fondos — hay que chequearlo
+empresas. Requiere que un banco se fondee con varios fondos, hay que chequearlo
 en la cartera, pero con ~20 money markets grandes y ~60 bancos debería sobrar.
 
 **(B) DiD con tratamiento continuo sobre los cambios de encaje (1.3.12).**
@@ -243,7 +243,7 @@ concentración limitada**. Acá los shocks serían el crecimiento del float por
 fondo, y hay ~15-20 money markets relevantes con Mercado Fondo dominando el
 patrimonio. El número efectivo de shocks (1/HHI) queda en el orden de 5 o 6. Con
 eso la inferencia SSIV no se sostiene, por más que la fórmula se pueda calcular.
-La ruta alternativa —shares exógenos— es peor todavía: los shares son la
+La ruta alternativa , shares exógenos,  es peor todavía: los shares son la
 decisión de cartera del fondo, o sea exactamente la variable endógena.
 Un shift-share **geográfico** (el plan original: shares provinciales del banco ×
 crecimiento provincial de adopción) sí tiene muchos shocks (24 provincias, y se
@@ -260,8 +260,8 @@ compensan, y que la compensación ocurre entre bancos distintos, es el aporte.
 
 1. **El crecimiento de los money market es casi todo tasa e inflación, no
    billeteras.** Hay que separar. El mejor test disponible: comparar clases
-   dentro del mismo fondo — la clase de la billetera contra la clase
-   institucional o retail — que comparten cartera, gerente y tasa. Si la clase
+   dentro del mismo fondo, la clase de la billetera contra la clase
+   institucional o retail, que comparten cartera, gerente y tasa. Si la clase
    billetera crece distinto, es adopción y no rendimiento. Es un control
    fondo×tiempo perfecto y está disponible en el dato.
 2. **La exposición pre no es exógena** (§3): son bancos mayoristas por modelo de
@@ -293,7 +293,7 @@ posicionarse, más que en "fintech y bancos" genérico:
   QJE)**: MMF como fondeo mayorista de bancos y qué pasa cuando se corta.
 - **Kacperczyk & Schnabl**: toma de riesgo de los money market.
 - **Drechsler, Savov & Schnabl (2017, QJE)**: deposits channel y poder de
-  mercado en depósitos — el mecanismo que las billeteras erosionan.
+  mercado en depósitos, el mecanismo que las billeteras erosionan.
 - **Khwaja & Mian (2008)**: el diseño.
 - **Borusyak, Hull & Jaravel (2025)**: por qué acá el SSIV no es la primera
   opción (número efectivo de shocks).

@@ -1,9 +1,21 @@
 # Corpus normativo: encajes a PSP y FCI, e interoperabilidad
 
-_Fintech-Dynamics. Última revisión: agosto 2026._
+_Fintech-Dynamics. Redactado en agosto de 2026; cronología y alícuotas revisadas el 12-oct-2026._
 
-Esta carpeta reúne las normas del BCRA que sostienen las Preguntas 1 y 3 de
-`Methodological_Notes/preguntas_investigacion.md`.
+Esta carpeta reúne las normas del BCRA sobre encajes a PSP y a FCI money market e
+interoperabilidad de pagos. Es la base institucional de la línea A
+(`Methodological_Notes/A_fondos_encajes/`). Las "Preguntas 1 y 3" que se citan abajo
+son las de la formulación original del proyecto
+(`Methodological_Notes/archivo/preguntas_investigacion.md`).
+
+Archivos de datos: `cronologia_normativa.csv` (54 normas, ene-2018 a jul-2026, con fecha
+de emisión, vigencia, bloque, efecto y valor para identificación) y
+`alicuotas_efectivo_minimo.csv` (alícuota mensual del haber a la vista de FCI money market,
+punto 1.3.12, y de las cuentas de PSP, punto 1.3.14). La alícuota sobre la vista de FCI
+money market: 0% desde abr-2020 (A 6992), 10% (A 7988, 15-abr-2024), 15% (A 8000,
+15-may-2024), 20% (A 8119, 1-nov-2024), 40% (A 8281 y A 8289, 1-ago-2025), 43,5% con el
+adicional general de 3,5 pp (A 8306, sep a nov de 2025) y 40% desde el 1-dic-2025, cuando
+A 8355 deja sin efecto ese adicional. La categoría no se eliminó.
 
 ```
 Regulation/
@@ -30,14 +42,14 @@ FCI para tapar el agujero.
 
 Verifiqué los cuatro eslabones contra los PDF. **Dos se caen.**
 
-### Eslabón 1 — El encaje del 100% (A 7429): verificado, pero mal fechado
+### Eslabón 1. El encaje del 100% (A 7429): verificado, pero mal fechado
 
 Emitida el **30/12/2021**, vigente **01/01/2022**. El punto 1.3.14 de Efectivo
 Mínimo fija 100% sobre "las cuentas de depósito de los PSPOCP en las que se
 encuentren depositados los fondos de sus clientes".
 
 La justificación pública del BCRA **no fue monetaria ni de nivelación
-competitiva**: fue custodial — "preservarlos de contingencias y garantizar que
+competitiva**: fue custodial, "preservarlos de contingencias y garantizar que
 estén siempre a disposición de los y las ahorristas". La lectura de que le
 quitaba rentabilidad a las billeteras fue de analistas y prensa (Ámbito,
 Cronista, Perfil, 30-31/12/2021), no del regulador.
@@ -57,7 +69,7 @@ hubiera muerto en enero de 2022, la A 7825 no tendría objeto.
 > transparente. Es el mejor candidato a shock de todo este corpus para la
 > Pregunta 3.
 
-### Eslabón 2 — Que eso empujó hacia los FCI: REFUTADO
+### Eslabón 2. Que eso empujó hacia los FCI: REFUTADO
 
 Este es el que hay que sacar del paper.
 
@@ -82,7 +94,7 @@ El encaje no pudo empujar a los PSP hacia un canal que ya existía, ya estaba
 autorizado y ya era masivo. Si esto queda en el paper, cae en el primer
 referee report.
 
-### Eslabón 3 — La escalera de encajes a FCI: fechas verificadas, motivo distinto
+### Eslabón 3. La escalera de encajes a FCI: fechas verificadas, motivo distinto
 
 | Com. "A" | Vigencia | Tasa | Justificación contemporánea |
 |---|---|---|---|
@@ -101,7 +113,7 @@ referee report.
 **Ninguna comunicación ni comunicado del BCRA menciona billeteras como
 objetivo.** Las justificaciones son tres y se repiten: nivelación
 anti-arbitraje regulatorio, absorción de pesos, y volatilidad del fondeo.
-Bausili (jul-2025): "heredamos un sistema de encajes súper distorsionado" — el
+Bausili (jul-2025): "heredamos un sistema de encajes súper distorsionado", el
 mismo depósito tenía 0% si venía vía FCI y 36% si venía de una empresa.
 
 Además, casi todas las tandas coinciden con episodios monetarios que las
@@ -112,7 +124,7 @@ el mes; el BCRA subió encajes dos veces en julio.
 > El canal billetera → FCI → banco es el **vehículo** por el que pasa la
 > política, no su **blanco declarado**.
 
-### Eslabón 4 — "Tapar el problema": no como intención, sí como efecto
+### Eslabón 4. "Tapar el problema": no como intención, sí como efecto
 
 Lo que el BCRA hizo entre 2024 y 2025 se describe mejor como **convergencia a
 la neutralidad del encaje respecto de la identidad del depositante**: un
@@ -168,7 +180,7 @@ rompe el event study.
 
 **Todos los tramos son nacionales y simultáneos.** No hay fases geográficas ni
 por entidad. Un event study puro sobre 07/12/2020, 29/11/2021 o 30/04/2024 no
-distingue interoperabilidad de cualquier otra cosa que haya pasado ese mes — y
+distingue interoperabilidad de cualquier otra cosa que haya pasado ese mes, y
 en Argentina siempre pasó algo. Como está planteada en `preguntas_investigacion.md`
 ("shock normativo nacional con fecha exacta + exposición territorial
 predeterminada"), la Pregunta 1 depende enteramente de que la exposición
@@ -182,7 +194,7 @@ territorial sea creíble, porque el shock por sí solo no identifica nada.
    todo este corpus, y encaja con el diseño territorial que ya tenemos.
 2. **Fecha de inscripción en el Registro de billeteras interoperables**
    (A 7462). Variación firma×tiempo, escalonada, con fecha administrativa dura.
-   Hay que verificar si el registro publica fecha de inscripción — es la
+   Hay que verificar si el registro publica fecha de inscripción, es la
    verificación de mayor valor marginal pendiente.
    `https://www2.bcra.gob.ar/SistemasFinancierosYdePagos/Registro_Billeteras_Digitales_Interoperables.asp`
 3. **Umbrales de 100.000 y 500.000 UVA** de la tasa de intercambio

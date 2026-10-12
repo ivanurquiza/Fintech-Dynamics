@@ -8,7 +8,7 @@ _No incluye interoperabilidad: eso va en `README.md`._
 
 ---
 
-## Acto 1 — Se crea el régimen (2020)
+## Acto 1. Se crea el régimen (2020)
 
 ### A 6859 · 09/01/2020
 Crea la figura del PSP y el Registro. Nace la categoría legal "cuenta de pago".
@@ -25,8 +25,8 @@ comunes de dinero" a pedido del cliente.**
 canal FCI estaba habilitado desde el día uno, no desde 2022. Y Mercado Fondo ya
 operaba desde 2018: la práctica precede a la norma.
 
-**Detalle:** la motivación declarada es de custodia — que la plata esté siempre
-disponible — más el disclaimer obligatorio de que no es un depósito bancario.
+**Detalle:** la motivación declarada es de custodia, que la plata esté siempre
+disponible, más el disclaimer obligatorio de que no es un depósito bancario.
 
 ### A 6992 · 23/04/2020
 Crea en Efectivo Mínimo la categoría "depósitos a la vista que constituyen el
@@ -41,7 +41,7 @@ la justificación no está verificada.
 
 ---
 
-## Acto 2 — El apretón al PSP y su reversión (2021-2023)
+## Acto 2. El apretón al PSP y su reversión (2021-2023)
 
 ### A 7429 · 30/12/2021, vigente 01/01/2022
 Encaje **100%** sobre las cuentas donde los PSP depositan los fondos de sus
@@ -80,7 +80,7 @@ todo el corpus.
 
 ---
 
-## Acto 3 — Cierre progresivo del canal FCI (2024-2025)
+## Acto 3. Cierre progresivo del canal FCI (2024-2025)
 
 El patrón es uno solo: el BCRA lleva el encaje de los depósitos de FCI money
 market de 0% a 40%, y **nunca menciona billeteras**.
@@ -116,7 +116,7 @@ detonante fue el desarme de la LEFI el 10/07/2025, que hundió la tasa de cauci�
 de ~35% a ~15% por exceso de liquidez, con el dólar +14% en el mes. Nada que ver
 con billeteras.
 
-**Detalle:** la A 8281 lo dice en su propio lenguaje — encajar "las partidas que
+**Detalle:** la A 8281 lo dice en su propio lenguaje, encajar "las partidas que
 generan mayor volatilidad y encarecen el crédito".
 
 ### A 8286 · vigente 25/07/2025
@@ -156,8 +156,8 @@ la información pública (Ley 27.275) que hay que hacer.
 ## Lectura de conjunto
 
 No es "el BCRA persiguió a las billeteras". Es que arrancó con un régimen de
-encajes que dependía de **quién** era el depositante — 0% si era un FCI, 100% si
-era un PSP, ~36% si era una empresa — y entre 2024 y 2025 convergió a tratar
+encajes que dependía de **quién** era el depositante, 0% si era un FCI, 100% si
+era un PSP, ~36% si era una empresa, y entre 2024 y 2025 convergió a tratar
 igual a depósitos iguales. La escalera 0→10→15→20→30→40 es esa convergencia.
 
 Las billeteras son el **vehículo** por donde pasa la política, no el blanco.

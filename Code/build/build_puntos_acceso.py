@@ -107,6 +107,26 @@ def views(c):
     """)
 
 
+# etiquetas de las versiones Stata (las variables que no aparecen quedan sin etiqueta)
+ETIQUETAS = {
+    "ym": "Mes, indice %tm de Stata (meses desde 1960m1) guardado como entero",
+    "year": "Anio", "month": "Mes (1-12)",
+    "cod_depto": "Codigo de departamento INDEC (5 digitos)",
+    "cod_prov": "Codigo de provincia INDEC", "cod_prov_indec": "Codigo de provincia INDEC",
+    "cod_prov_arca": "Codigo de provincia ARCA (padron de CENDEU)",
+    "provincia": "Provincia", "departamento": "Departamento",
+    "n_deptos": "Departamentos con al menos un punto de acceso",
+    "n_localidades": "Localidades con al menos un punto de acceso",
+    "sucursales": "Sucursales", "suc_moviles": "Sucursales moviles",
+    "atm": "Cajeros automaticos (ATM)", "tas": "Terminales de autoservicio (TAS)",
+    "acsf_vinculos": "Vinculos con agencias complementarias (ACSF); una agencia puede contar varias veces",
+    "pda_sin_acsf": "Puntos de acceso sin ACSF: sucursales + moviles + ATM + TAS",
+    "pda_total": "Puntos de acceso totales, incluye vinculos ACSF",
+    "grupo": "Grupo de entidad segun el BCRA", "entidad": "Entidad financiera (nombre)",
+    "tipo_pda": "Tipo de punto de acceso", "n_pda": "Cantidad de puntos de acceso",
+}
+
+
 def write(c, name, sql, dta=False):
     p = OUT / f"{name}.parquet"
     c.execute(f"COPY ({sql}) TO '{p}' (FORMAT parquet, COMPRESSION zstd)")
@@ -117,7 +137,8 @@ def write(c, name, sql, dta=False):
         for col in df.columns:
             if df[col].dtype == "O":
                 df[col] = df[col].astype(str)
-        df.to_stata(OUT / f"{name}.dta", write_index=False, version=118)
+        df.to_stata(OUT / f"{name}.dta", write_index=False, version=118,
+                    variable_labels={k: v[:80] for k, v in ETIQUETAS.items() if k in df.columns})
         print(f"  + {name}.dta", end="")
     print()
 

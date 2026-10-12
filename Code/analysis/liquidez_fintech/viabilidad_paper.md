@@ -1,4 +1,4 @@
-# Viabilidad del paper — 22 de septiembre de 2026
+# Viabilidad del paper. 22 de septiembre de 2026
 
 
 **Hay dos márgenes observables con soporte.** En las cohortes marzo–diciembre de 2025, 40,2% de las primeras relaciones con MercadoLibre corresponden a personas sin saldo en los seis meses anteriores; 49,8% ya tenían un banco. La primera proporción es 26,6% en Brubank, 15,3% en Ualá y 7,8% en Naranja Digital. Estas diferencias describen composición de clientes, no impactos comparables de las entidades. Entre las 64.133 entradas de MercadoLibre sin saldo previo, 97,5% tampoco tenía saldo anterior en toda la ventana observable y 54,5% mantiene saldo con la entidad seis meses después. Mantener deuda no es una medida de bienestar ni de renovación del préstamo.

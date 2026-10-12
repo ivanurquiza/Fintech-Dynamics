@@ -787,3 +787,50 @@ def cartera_ancha(E: pd.DataFrame, L: pd.DataFrame) -> pd.DataFrame:
     out.loc[out["pn_cartera"].fillna(0) < 1e6, "cartera_valida"] = 0
     out["semana"] = semana(out["cartera_al"])
     return out
+
+
+# ---------------------------------------------------------------------------
+# Etiquetas de variables para la versión Stata del panel fondo x semana
+# (máximo 80 caracteres por etiqueta)
+# ---------------------------------------------------------------------------
+
+ETIQUETAS_FONDO_SEMANA = {
+    "cod_cnv": "Codigo CNV del fondo (planilla diaria); llave del fondo",
+    "semana": "Viernes de cierre de la semana (W-FRI)",
+    "fondo": "Nombre del fondo segun la planilla diaria",
+    "gerente": "Sociedad gerente (planilla)",
+    "depositaria": "Sociedad depositaria (planilla); no es donde esta la vista",
+    "tipo_dinero": "Tipo de money market: Clasico o Dinamico (planilla)",
+    "pn": "Patrimonio neto del fondo, ultimo dia habil de la semana, pesos nominales",
+    "flujo": "Flujo neto de la semana: suma de dCCP x VCP/1000 de las clases, pesos",
+    "n_dias": "Dias con planilla en la semana",
+    "ultima_fecha": "Ultimo dia con planilla en la semana",
+    "fee_medio": "Honorarios SG+SD+gastos, promedio por PN de las clases, % anual",
+    "tna_bruta": "TNA bruta del fondo (neta + honorarios), prom. por dias, %",
+    "fondo_cnv": "Nombre del fondo segun la ficha CNV (cartera)",
+    "cartera_al": "Fecha efectiva de la cartera informada",
+    "gerente_cnv": "Sociedad gerente segun la ficha CNV",
+    "depositaria_cnv": "Sociedad depositaria segun la ficha CNV",
+    "clasificacion_cnv": "Clasificacion del fondo segun la ficha CNV",
+    "moneda_cnv": "Moneda del fondo segun la ficha CNV",
+    "region_cnv": "Region segun la ficha CNV",
+    "horizonte_cnv": "Horizonte segun la ficha CNV",
+    "pn_cartera": "Patrimonio neto informado en la cartera, pesos nominales",
+    "total_pct": "Suma de porcentajes informada en la cartera (deberia ser 100)",
+    "moneda_pn": "Moneda en que se expresa pn_cartera",
+    "lfc": "Id del fondo en la ficha CNV (DetallesFCI/{lfc})",
+    "fecha_pedida": "Viernes pedido a la ficha CNV",
+    "pct_disponibilidades": "Disponibilidades (cuentas a la vista, sin banco), % del PN",
+    "pct_operaciones_plazo": "Operaciones a plazo (plazo fijo + caucion), % del PN",
+    "pct_titulos": "Titulos de deuda, % del PN",
+    "pct_cuotapartes_fci": "Cuotapartes de otros FCI, % del PN",
+    "pct_otros_activos": "Otros activos, % del PN",
+    "pct_pasivos": "Pasivos, % del PN",
+    "pct_plazo_fijo": "Plazo fijo tradicional en pesos (suma de bancos), % del PN",
+    "pct_plazo_fijo_uva": "Plazo fijo UVA (suma de bancos), % del PN",
+    "pct_caucion": "Caucion colocadora (suma de mercados), % del PN",
+    "n_bancos_pf": "Cantidad de bancos con plazo fijo del fondo",
+    "cartera_valida": "1 si la cartera pasa los controles de carga (pct en [-1,100.5], PN>1e6)",
+    "tiene_cartera": "1 si hay cartera para esa semana",
+    "pn_ratio": "PN planilla / PN cartera (control de crosswalk)",
+}

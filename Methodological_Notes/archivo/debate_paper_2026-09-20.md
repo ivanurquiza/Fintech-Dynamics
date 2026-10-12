@@ -290,7 +290,7 @@ opciones de liquidez del BCRA. Los balances no cubren las PNFC fintech; sí hay
 algunas entidades digitales reguladas. Se verificaron ejemplos de información
 sobre puts en estados públicos, pero no se validó un instrumento.
 
-### Investigación LEFI y estructura de paper — 21 de septiembre
+### Investigación LEFI y estructura de paper. 21 de septiembre
 
 Ver [paper_liquidez_fintech_2026-09-21.md](paper_liquidez_fintech_2026-09-21.md).
 Relee `idea_lefi.md`, contrasta la mecánica con A 8060 y los informes del BCRA,

@@ -1,0 +1,111 @@
+fuente,codigo,descripcion,ym_desde,ym_hasta,n_obs
+esd,500110001000,TOTAL DE FINANCIACIONES Y GARANTIAS OTORGADAS,2018-01-01,2026-04-01,7648
+esd,500110001010,TF.Sit.1: En situación normal,2018-01-01,2026-04-01,7648
+esd,500110001020,TF.Sit.2: Con seguimiento especial/Riesgo bajo,2018-01-01,2026-04-01,6979
+esd,500110001030,TF.Sit.3: Con problemas/Riesgo medio,2018-01-01,2026-04-01,6936
+esd,500110001040,TF.Sit.4: Con alto riesgo de insolvencia/Riesgo alto,2018-01-01,2026-04-01,6981
+esd,500110001050,TF.Sit.5: Irrecuperable,2018-01-01,2026-04-01,6882
+esd,500110001060,TF.Sit.6: Irrecuperable por disposición técnica,2018-01-01,2020-07-01,1387
+esd,500110002000,TOTAL GARANTIZADO - Garantías Preferidas A y B,2018-01-01,2026-04-01,6666
+esd,500110002010,TFG.Sit.1: En situación normal,2018-01-01,2018-02-01,138
+esd,500110002020,TFG.Sit.2: Con seguimiento especial/Riesgo bajo,2018-01-01,2018-02-01,124
+esd,500110002030,TFG.Sit.3: Con problemas/Riesgo medio,2018-01-01,2018-02-01,118
+esd,500110002040,TFG.Sit.4: Con alto riesgo de insolvencia/Riesgo alto,2018-01-01,2018-02-01,121
+esd,500110002050,TFG.Sit.5: Irrecuperable,2018-01-01,2018-02-01,114
+esd,500110002060,TFG.Sit.6: Irrecuperable por disposición técnica,2018-01-01,2018-02-01,24
+esd,500110004000,TOTAL DE GARANTIAS OTORGADAS,2018-01-01,2018-02-01,120
+esd,500110101000,CARTERA COMERCIAL,2018-01-01,2026-04-01,7342
+esd,500110101001,Total cartera sobre financiaciones (%),2018-01-01,2026-04-01,7342
+esd,500110101010,C.COM.Sit.1: En situación normal,2018-01-01,2026-04-01,7342
+esd,500110101020,C.COM.Sit.2: Con seguimiento especial,2018-01-01,2026-04-01,4111
+esd,500110101030,C.COM.Sit.3: Con problemas,2018-01-01,2026-04-01,3957
+esd,500110101040,C.COM.Sit.4: Con alto riesgo de insolvencia,2018-01-01,2026-04-01,4465
+esd,500110101050,C.COM.Sit.5: Irrecuperable,2018-01-01,2026-04-01,3750
+esd,500110101060,C.COM.Sit.6: Irrecuperable por disposición técnica,2018-01-01,2020-07-01,84
+esd,500110102000,C.COM.TOTAL GARANTIZADO - Garantías Preferidas A y B,2018-01-01,2026-04-01,5977
+esd,500110102010,C.COM.G.Sit.1: En situación normal,2018-01-01,2018-02-01,132
+esd,500110102020,C.COM.G.Sit.2: Con seguimiento especial,2018-01-01,2018-02-01,91
+esd,500110102030,C.COM.G.Sit.3: Con problemas,2018-01-01,2018-02-01,78
+esd,500110102040,C.COM.G.Sit.4: Con alto riesgo de insolvencia,2018-01-01,2018-02-01,81
+esd,500110102050,C.COM.G.Sit.5: Irrecuperable,2018-01-01,2018-02-01,68
+esd,500110102060,C.COM.G.Sit.6: Irrecuperable por disposición técnica,2018-01-01,2018-02-01,2
+esd,500110104000,C.COM. - GARANTIAS OTORGADAS,2018-01-01,2018-02-01,101
+esd,500110201000,CARTERA DE CONSUMO O VIVIENDA,2018-01-01,2026-04-01,6909
+esd,500110201001,Total cartera sobre financiaciones (%),2018-01-01,2026-04-01,6909
+esd,500110201010,C.CON.Sit.1: En situación normal,2018-01-01,2026-04-01,6909
+esd,500110201020,C.CON.Sit.2: Riesgo bajo,2018-01-01,2026-04-01,6559
+esd,500110201030,C.CON.Sit.3: Riesgo medio,2018-01-01,2026-04-01,6470
+esd,500110201040,C.CON.Sit.4: Riesgo alto,2018-01-01,2026-04-01,6500
+esd,500110201050,C.CON.Sit.5: Irrecuperable,2018-01-01,2026-04-01,6285
+esd,500110201060,C.CON.Sit.6: Irrecuperable por disposición técnica,2018-01-01,2020-07-01,1368
+esd,500110202000,C.CON.TOTAL GARANTIZADO - Garantías Preferidas A y B,2018-01-01,2026-04-01,5605
+esd,500110202010,C.CON.G.Sit.1: En situación normal,2018-01-01,2018-02-01,118
+esd,500110202020,C.CON.G.Sit.2: Riesgo bajo,2018-01-01,2018-02-01,104
+esd,500110202030,C.CON.G.Sit.3: Riesgo medio,2018-01-01,2018-02-01,93
+esd,500110202040,C.CON.G.Sit.4: Riesgo alto,2018-01-01,2018-02-01,89
+esd,500110202050,C.CON.G.Sit.5: Irrecuperable,2018-01-01,2018-02-01,94
+esd,500110202060,C.CON.G.Sit.6: Irrecuperable por disposición técnica,2018-01-01,2018-02-01,20
+esd,500110204000,C.CON. - GARANTIAS OTORGADAS,2018-01-01,2018-02-01,82
+esd,500110301000,CARTERA COMERCIAL ASIMILABLE A CONSUMO,2018-01-01,2026-04-01,6582
+esd,500110301001,Total cartera sobre financiaciones (%),2018-01-01,2026-04-01,6582
+esd,500110301010,C.CAC.Sit.1: En situación normal,2018-01-01,2026-04-01,6567
+esd,500110301020,C.CAC.Sit.2: Riesgo bajo,2018-01-01,2026-04-01,5872
+esd,500110301030,C.CAC.Sit.3: Riesgo medio,2018-01-01,2026-04-01,5856
+esd,500110301040,C.CAC.Sit.4: Riesgo alto,2018-01-01,2026-04-01,5790
+esd,500110301050,C.CAC.Sit.5: Irrecuperable,2018-01-01,2026-04-01,5530
+esd,500110301060,C.CAC.Sit.6: Irrecuperable por disposición técnica  (%),2018-01-01,2020-07-01,229
+esd,500110302000,C.CAC.TOTAL GARANTIZADO - Garantías Preferidas A y B,2018-01-01,2026-04-01,5663
+esd,500110302010,C.CAC.G.Sit.1: En situación normal,2018-01-01,2018-02-01,116
+esd,500110302020,C.CAC.G.Sit.2: Riesgo bajo,2018-01-01,2018-02-01,100
+esd,500110302030,C.CAC.G.Sit.3: Riesgo medio,2018-01-01,2018-02-01,92
+esd,500110302040,C.CAC.G.Sit.4: Riesgo alto,2018-01-01,2018-02-01,90
+esd,500110302050,C.CAC.G.Sit.5: Irrecuperable,2018-01-01,2018-02-01,78
+esd,500110302060,C.CAC.G.Sit.6: Irrecuperable por disposición técnica,2018-01-01,2018-02-01,4
+esd,500110304000,C.CAC. - GARANTIAS OTORGADAS,2018-01-01,2018-02-01,86
+esd,500130003000,Previsiones por riesgo de incobrabilidad constituídas,2018-01-01,2026-04-01,7545
+indicad,800010100010,C1 - Apalancamiento (en veces),2018-01-01,2026-04-01,7607
+indicad,800010100020,C2 - Pérdida Potencial de Cartera en Situación 2 a 6 (%),2018-01-01,2026-04-01,7607
+indicad,800010100030,C3 - Pérdida Potencial de Cartera en Situación 3 a 6 (%),2018-01-01,2026-04-01,7607
+indicad,800010200090,A9 - Total Cartera Irregular / Total Financiaciones (%),2018-01-01,2026-04-01,7606
+indicad,800010200110,A11 - Cartera Irregular Sector Privado (%),2018-01-01,2026-04-01,7560
+indicad,800010200120,A12 - Participación Cartera Comercial Sector Privado (%),2018-01-01,2026-04-01,7560
+indicad,800010200130,A13 - Participación Cartera Consumo Sector Privado (%),2018-01-01,2026-04-01,7560
+indicad,800010200140,A14 - Previsiones sobre Cartera Irregular Total (%),2018-01-01,2026-04-01,7607
+indicad,800010200160,A16 - Cartera Irregular Consumo Sector Privado (%),2018-01-01,2026-04-01,7430
+indicad,800010200170,A17 - Cartera Irregular Comercial Sector Privado (%),2018-01-01,2026-04-01,7480
+indicad,800010200210,A21 - Posición de Previsiones Mínimas (%),2018-01-01,2026-04-01,7561
+indicad,800010201030,AG3 - Importancia de cartera vencida del Sector Privado (%),2018-01-01,2026-04-01,7560
+indicad,800010201290,AG29 - Disponibilidades / Activo Neteado (%),2018-01-01,2026-04-01,7607
+indicad,800010300010,E1 - Absorción de Gastos de Ad. con Volúmen de Negocio (%),2018-01-01,2026-04-01,7607
+indicad,800010300020,E2 - Margen de rentabilidad operat./Gastos de Estructura (%),2018-01-01,2026-04-01,7607
+indicad,800010300040,E4 - Depósitos por Empleado (en millones de pesos),2018-01-01,2026-04-01,7607
+indicad,800010300050,E5 - Financiaciones por Empleado (en millones de pesos),2018-01-01,2026-04-01,7607
+indicad,800010400010,R1 - Rendimiento Anual del Patrimonio ( ROE) (%),2018-01-01,2026-04-01,7607
+indicad,800010400020,R2 - Rendimiento Ordinario del Patrimonio (%),2018-01-01,2026-04-01,7607
+indicad,800010400080,R8 - Tasa Implicita Préstamos Totales (%),2018-01-01,2026-04-01,7585
+indicad,800010400090,R9 - Tasa Implicita Depósitos Totales (%),2018-01-01,2026-04-01,7505
+indicad,800010400170,R17 - Gastos en Personal / Gastos de Administración (%),2018-01-01,2026-04-01,7607
+indicad,800010401010,RG1 - Retorno sobre Activos ( ROA) (%),2018-01-01,2026-04-01,7607
+indicad,800010401020,RG2 - Ingresos Financieros Netos / Activo Neteado (%),2018-01-01,2026-04-01,7607
+indicad,800010401030,RG3 - Cargos por Incobrabilidad / Activo Neteado (%),2018-01-01,2026-04-01,7607
+indicad,800010401040,RG4 - Ingresos Netos por Servicios / Activo Neteado (%),2018-01-01,2026-04-01,7607
+indicad,800010401050,RG5 - Gastos de Administración / Activo Neteado (%),2018-01-01,2026-04-01,7607
+indicad,800010401150,RG15 - Retorno / Activos (ROA) antes del Imp. De Gcias. (%),2018-01-01,2026-04-01,7607
+indicad,800010500010,L1 - Liquidez Total con Posición de Call (%),2018-01-01,2026-04-01,7607
+indicad,800010500080,L8_II - Liquidez Total (%),2018-01-01,2026-04-01,7607
+indicad,800010500090,L9 - Liquidez Inmediata (Disp + Lebacs/ Nobacs x Pases) (%),2018-01-01,2026-04-01,7607
+inf_adi,310000000033,Cantidad de cuentas corrientes,2018-01-01,2026-04-01,5535
+inf_adi,310000000043,Cantidad de cuentas de ahorro,2018-01-01,2026-04-01,6614
+inf_adi,310000000044,Cantidad de cajas de ahorro de ayuda social,2018-01-01,2026-04-01,3624
+inf_adi,310000000045,Cantidad de cuentas previsionales,2018-01-01,2026-04-01,3347
+inf_adi,310000000051,Cantidad de operaciones a plazo fijo Individuos,2018-01-01,2026-04-01,5844
+inf_adi,310000000052,Cantidad de operaciones a plazo fijo Empresas,2018-01-01,2026-04-01,6858
+inf_adi,310000000063,Cantidad de operaciones por préstamos hipotecarios,2018-01-01,2026-04-01,4703
+inf_adi,310000000064,Cantidad de operaciones por préstamos prendarios,2018-01-01,2026-04-01,5548
+inf_adi,310000000065,Cantidad de operaciones por otros préstamos,2018-01-01,2026-04-01,7546
+inf_adi,310000000070,Dotación de personal,2018-01-01,2026-04-01,7677
+inf_adi,312100000011,Cantidad de titulares por tarjetas de crédito,2018-01-01,2026-04-01,5049
+inf_adi,312100000012,Cantidad de tarjetas de crédito (plásticos),2018-01-01,2026-04-01,5057
+inf_adi,318000100002,Cantidad de tarjetas de débito,2018-01-01,2026-04-01,4975
+inf_adi,400100001000,Cantidad de Cuentas,2018-01-01,2026-04-01,5022
+inf_adi,400100002000,Cantidad de Empresas,2018-01-01,2026-04-01,5022

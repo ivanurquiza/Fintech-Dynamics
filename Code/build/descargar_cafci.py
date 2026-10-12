@@ -6,7 +6,7 @@ Descarga las fuentes CAFCI que no dependen de la API de series:
      raw/cafci/resumenes/
 Cada descarga queda registrada en raw/cafci/manifest.csv con url, fecha de
 descarga y hash sha256 del archivo tal como llego (crudos inmutables).
-Fuentes y como se llega a cada una: ver Methodological_Notes/FUENTES_FCI.md
+Fuentes y como se llega a cada una: ver Methodological_Notes/archivo/fuentes_fci_cafci_2026-08.md (API de CAFCI, fuera de servicio desde ago-2026)
 Uso:      python descargar_cafci.py
 Requiere: pip install requests
 """
